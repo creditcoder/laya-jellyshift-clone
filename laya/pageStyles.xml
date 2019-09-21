@@ -1,0 +1,10 @@
+<page>
+   <item name="test/TestScene.scene" props="" ifExport="分离模式" aName=""/>
+   <item name="GameScene.scene" props="" ifExport="Embedded" aName=""/>
+   <item name="testButton.scene" props="" ifExport="Split" aName=""/>
+   <item name="SettingScene.scene" props="" ifExport="Embedded" aName=""/>
+   <item name="CustomizeScene.scene" props="" ifExport="Embedded" aName=""/>
+   <item name="SplashScene.scene" props="" ifExport="Embedded" aName=""/>
+   <item name="ProgressScene.scene" props="" ifExport="Embedded" aName=""/>
+   <item name="WorldScene.scene" props="" ifExport="Embedded" aName=""/>
+</page>

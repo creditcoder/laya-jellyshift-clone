@@ -1,0 +1,10 @@
+<res>
+   <item name="Images/on.png" type="CheckBox" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
+   <item name="Images/off.png" type="CheckBox" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
+   <item name="Images/settings_menu_frame.png" type="Button" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
+   <item name="Images/ads.png" type="Button" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
+   <item name="Images/customize.png" type="Sprite" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
+   <item name="Images/x_challenges.png" type="Button" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
+   <item name="Images/heroes.png" type="Image" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
+   <item name="Images/locked_item.png" type="Button" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
+</res>
