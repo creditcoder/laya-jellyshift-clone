@@ -9,11 +9,11 @@ import WorldDlg from "./script/WorldDlg"
 */
 export default class GameConfig{
     static width:number=640;
-    static height:number=1136;
-    static scaleMode:string="fixedwidth";
+    static height:number=960;
+    static scaleMode:string="fixedauto";
     static screenMode:string="none";
-    static alignV:string="top";
-    static alignH:string="left";
+    static alignV:string="middle";
+    static alignH:string="center";
     static startScene:any="GameScene.scene";
     static sceneRoot:string="";
     static debug:boolean=false;

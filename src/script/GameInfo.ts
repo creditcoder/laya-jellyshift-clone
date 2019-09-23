@@ -1,5 +1,6 @@
 export default class GameInfo {
 
+    public static round:number = 6;
     // public static baseResPath = "https://beatstreet.digitalgalaxy.cn/jelly/";
     // public static baseResPath = "https://games.gamesafari.cn/jelly/";
     public static baseResPath:string = "http://localhost/jelly/";
@@ -190,7 +191,6 @@ export default class GameInfo {
     public static org_velocity = 0.2;
 
     public static GAME_STATE:number = 0;// 0: ready, 1:running, 2:end,
-    public static round:number = 3;
     public static modelName:string =  GameInfo.models[0].category + "_" + GameInfo.models[0].name;    
     public static jewelCnt:number = 2000;
     public static eatJewelCnt:number = 0;
@@ -206,7 +206,7 @@ export default class GameInfo {
     public static maxPhisingValue:number = 100;
     public static deltaPhisingValue:number = 20;
     
-    public static isJewlsRound:boolean = false;
+    public static isJewelsRound:boolean = false;
     public static terrainNum:number = 0;
     public static terrainCol:Laya.Color;
     public static terrainSky:Laya.Color;
@@ -226,7 +226,7 @@ export default class GameInfo {
         GameInfo.storeGameStatus();
         GameInfo.GetLoadLevel();
         GameInfo.GetTargetFoodIndex();
-        GameInfo.IsJewlsLevel();
+        GameInfo.isJewelsLevel();
         GameInfo.GetTerrainInfo();
 
         GameInfo.eatJewelCnt = 0;
@@ -268,7 +268,7 @@ export default class GameInfo {
         GameInfo.terrainNum = GameInfo.round % 8;
         if (GameInfo.terrainNum == 0)
             GameInfo.terrainNum = 8;
-        GameInfo.terrainCol = ( GameInfo.isJewlsRound )?Laya.Color.YELLOW:Laya.Color.GRAY;
+        GameInfo.terrainCol = ( GameInfo.isJewelsRound )?Laya.Color.YELLOW:Laya.Color.GRAY;
         var colorList = [Laya.Color.RED, Laya.Color.GREEN, Laya.Color.BLUE, Laya.Color.MAGENTA, Laya.Color.CYAN];
         GameInfo.terrainSky = colorList[GameInfo.round % 5];
     }
@@ -311,7 +311,7 @@ export default class GameInfo {
     }
     
     public static getFoodArray():Array<string> {
-        if (GameInfo.isJewlsRound)
+        if (GameInfo.isJewelsRound)
             return [];
             
         let from_idx = Math.floor(GameInfo.targetFood/3)*3;
@@ -332,9 +332,14 @@ export default class GameInfo {
 		return [x, y];
     }
 
-    public static IsJewlsLevel():Boolean {
-        GameInfo.isJewlsRound =  (GameInfo.round % 4 == 0);
-        return GameInfo.isJewlsRound;
+    public static isJewelsLevel():Boolean {
+        GameInfo.isJewelsRound =  (GameInfo.round % 4 == 0);
+        return GameInfo.isJewelsRound;
+    }
+
+    public static isCurveLevel():Boolean {
+        let isCurveRound =  ((GameInfo.round+1) % 4 == 0);
+        return isCurveRound;
     }
 
     public SetCoin() {

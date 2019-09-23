@@ -30,8 +30,6 @@ class Main {
 	onConfigLoaded(): void {
 		GameConfig.startScene && Laya.Scene.open(GameConfig.startScene);
 	}
-
-	////////////////////////////////
 }
 
 new Main();

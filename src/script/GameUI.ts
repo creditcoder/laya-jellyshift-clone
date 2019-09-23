@@ -11,6 +11,7 @@ import WorldDlg from "./../script/WorldDlg";
 import GameInfo from "./../script/GameInfo";
 import Food from "./Food";
 import Sound from "./Sound";
+import TriggerCollisionScript4Round from "../common/TriggerCollisionScript4Round";
 
 export default class GameUI extends ui.GameSceneUI {
 
@@ -32,7 +33,7 @@ export default class GameUI extends ui.GameSceneUI {
 	private initial_food_x = this.fruit.x;// initial value of fruit x.
 	private path_right_x = this.path.x + this.path.width;//right point of path
 
-	private sp:Laya.Particle2D;
+	// private sp:Laya.Particle2D;
 
 	constructor() {
 		super();
@@ -97,7 +98,7 @@ export default class GameUI extends ui.GameSceneUI {
 		Sound.playLevelCompleteSound();
 
 		if (parseInt(this.eat_jewel_cnt.text) > 0) {
-			if (GameInfo.IsJewlsLevel()) {
+			if (GameInfo.isJewelsLevel()) {
 				let cj = parseInt(this.current_jewel.text);
 				let ej = parseInt(this.eat_jewel_cnt.text);
 				cj += ej;
@@ -226,56 +227,17 @@ export default class GameUI extends ui.GameSceneUI {
 		GameInfo.scene = this.curScene;	
 
 		var dlight = this.curScene.getChildByName("Directional light") as Laya.DirectionLight;
-		//dlight.intensity = 0.5;
+
+		if (GameInfo.isCurveLevel()) {
+			try {
+				this.curve_proc();
+			} catch(e) {
+				console.log("curve level init...", e.toString);
+			}
+		}		
 		
-		// var dlight:Laya.DirectionLight = this.curScene.addChild(new Laya.DirectionLight()) as Laya.DirectionLight;
-		// dlight.color = new Laya.Vector3(1, 1, 1);
-		// dlight.transform.translate(new Laya.Vector3(0, 3, 0));
-        // dlight.transform.rotate(new Laya.Vector3(-3.14 / 3, 0, 0.0));
-		
-		// dlight.shadow = true;
-		// dlight.shadowDistance = 3;
-		// dlight.shadowResolution = 2048;
-		// dlight.shadowPSSMCount = 1;
-		// dlight.shadowPCFType = 3;
-
-
-		// Laya.timer.frameLoop(1, this, function (): void {
-        //     Laya.Quaternion.createFromYawPitchRoll(0.025, 0, 0, this._quaternion);
-        //     dlight.transform.worldMatrix.getForward(this._direction);
-        //     Laya.Vector3.transformQuat(this._direction, this._quaternion,this._direction);
-        //     var mat = dlight.transform.worldMatrix;
-        //     mat.setForward(this._direction);
-        //     dlight.transform.worldMatrix = mat;     
-		// });
-		
-		//////////////////////////////////////////////////////////////////////////////////////
-		// let road_obj:Laya.Sprite3D = this.curScene.getChildByName("RoadObject") as Laya.Sprite3D;
-		// for (let i = 0; i < road_obj.numChildren; i ++) {
-		// 	(road_obj.getChildAt(i) as Laya.MeshSprite3D).meshRenderer.castShadow = true;
-		// 	(road_obj.getChildAt(i) as Laya.MeshSprite3D).meshRenderer.receiveShadow = true;
-		// }		
-
-		// let ground_obj:Laya.MeshSprite3D = this.curScene.getChildByName("Level").getChildAt(0).getChildByName("ground") as Laya.MeshSprite3D;
-		// ground_obj.meshRenderer.castShadow = false;
-		// ground_obj.meshRenderer.receiveShadow = true;
-
-		// let obs_obj:Laya.Sprite3D = this.curScene.getChildByName("Level").getChildByName("obstacles") as Laya.Sprite3D;
-		// for (let i = 0; i < obs_obj.numChildren; i ++) {
-		// 	(obs_obj.getChildAt(i) as Laya.MeshSprite3D).meshRenderer.castShadow = true;
-		// 	(obs_obj.getChildAt(i) as Laya.MeshSprite3D).meshRenderer.receiveShadow = true;
-		// }		
-		
-///////////////////////////////////////////////////////////////////////////////////////////////////
-		//(this.curScene.getChildAt(3) as Laya.MeshSprite3D).meshRenderer.receiveShadow = true;
-
-		// return;
-		// let ground = this.curScene.getChildByName("Level").getChildAt(0).getChildByName("ground") as Laya.MeshSprite3D;
-		// ground.meshRenderer.receiveShadow = true;
-
-
 		this.pillar_proc();
-		if (GameInfo.IsJewlsLevel()) {
+		if (GameInfo.isJewelsLevel()) {
 			this.jewel_proc();
 		}
 		
@@ -284,19 +246,19 @@ export default class GameUI extends ui.GameSceneUI {
 		this.initFood();
 		this.initUiInfo();		
 
-		if (!GameInfo.IsJewlsLevel())
+		if (!GameInfo.isJewelsLevel())
 			return;
 
-		var loaddata= [
-			{url:"res/particles/glow_jiesuan.png",type: Laya.Loader.IMAGE },
-			{url:"res/particles/Jiesuan_eff.part",type: Laya.Loader.JSON },
-			{url:"res/particles/heart.png",type: Laya.Loader.IMAGE },
-			{url:"res/particles/texture.png",type: Laya.Loader.IMAGE },
-			{url:"res/particles/RadiusMode.part",type: Laya.Loader.JSON },
-			{url:"res/particles/particleNew.part",type: Laya.Loader.JSON },
-			{url:"res/particles/GravityMode.part",type: Laya.Loader.JSON }			
-		]
-		Laya.loader.load(loaddata, Laya.Handler.create(this, this.initParticle2D));	
+		// var loaddata= [
+		// 	{url:"res/particles/glow_jiesuan.png",type: Laya.Loader.IMAGE },
+		// 	{url:"res/particles/Jiesuan_eff.part",type: Laya.Loader.JSON },
+		// 	{url:"res/particles/heart.png",type: Laya.Loader.IMAGE },
+		// 	{url:"res/particles/texture.png",type: Laya.Loader.IMAGE },
+		// 	{url:"res/particles/RadiusMode.part",type: Laya.Loader.JSON },
+		// 	{url:"res/particles/particleNew.part",type: Laya.Loader.JSON },
+		// 	{url:"res/particles/GravityMode.part",type: Laya.Loader.JSON }			
+		// ]
+		// Laya.loader.load(loaddata, Laya.Handler.create(this, this.initParticle2D));	
 	}
 
 	private initPlayer():void {//player_group name, player name
@@ -427,7 +389,7 @@ export default class GameUI extends ui.GameSceneUI {
 			}
 		}
 		
-		if (!GameInfo.IsJewlsLevel())
+		if (!GameInfo.isJewelsLevel())
 			return;
 		let ground_list = this.curScene.getChildByName("Level").getChildByName("1") as Laya.MeshSprite3D;
 		for (let i = 0; i < ground_list.numChildren - 1; i ++) {
@@ -599,8 +561,21 @@ export default class GameUI extends ui.GameSceneUI {
 				subObj.getChildAt(j).on("trigger", this, this.updateFeverDown);
 				subObj.getChildAt(j).addComponent(TriggerCollisionScript);				
 			}					
-		}	
-		
+		}			
+	}
+
+	private curve_proc(): void {		
+		var translevel = this.curScene.getChildByName("Level");
+		var rd_cols = translevel.getChildByName("corner_to_right");
+		for( var i = 0; i < rd_cols.numChildren; i++ ) {
+			var subObj = rd_cols.getChildAt(i);
+			subObj.on("trigger", this, this.updatePlayerDir);
+			subObj.addComponent(TriggerCollisionScript4Round);							
+		}			
+	}
+
+	private updatePlayerDir(dir):void {
+		this.player_pointer.updateDir(dir);
 	}
 
 	private jewel_proc(): void {
@@ -733,23 +708,23 @@ export default class GameUI extends ui.GameSceneUI {
 		this.setOrgSky();
 	}
 
-	private initParticle2D(): void {
-		if(this.sp==null){
+	// private initParticle2D(): void {
+	// 	if(this.sp==null){
 
-			// Jiesuan_eff.part, RadiusMode.part, particleNew.part, GravityMode.part
+	// 		// Jiesuan_eff.part, RadiusMode.part, particleNew.part, GravityMode.part
 
-			var	settings:Laya.ParticleSetting = Laya.loader.getRes("res/particles/RadiusMode.part")
-			this.sp = new Laya.Particle2D(settings);
-			this.sp.mouseEnabled = false;
-			this.addChild(this.sp);
+	// 		var	settings:Laya.ParticleSetting = Laya.loader.getRes("res/particles/RadiusMode.part")
+	// 		this.sp = new Laya.Particle2D(settings);
+	// 		this.sp.mouseEnabled = false;
+	// 		this.addChild(this.sp);
 			
-			this.sp.pos(this.width/2, this.height/2+100);
-			this.sp.visible = true;
-			Laya.timer.once(1, this, ()=>{
-				this.sp.visible = false;
-			});
-		}
-	}
+	// 		this.sp.pos(this.width/2, this.height/2+100);
+	// 		this.sp.visible = true;
+	// 		Laya.timer.once(1, this, ()=>{
+	// 			this.sp.visible = false;
+	// 		});
+	// 	}
+	// }
 
 	public updateJewelBar():void {
 		
@@ -760,19 +735,14 @@ export default class GameUI extends ui.GameSceneUI {
 		GameInfo.eatJewelCnt += 5;
 		this.eat_jewel_cnt.text = GameInfo.eatJewelCnt.toString();
 
-		this.sp.visible = true;
-		Laya.timer.once(100, this, this.showParticle);
-	}
-
-	private showParticle():void {
-		this.sp.visible = false;		
+		this.player_pointer.ShowSpeedParticle();		
 	}
 
 	private startRound() {
 		this.updateUI4Start();
 		Sound.playGameStartSound();		
 
-		if (!GameInfo.IsJewlsLevel()) {
+		if (!GameInfo.isJewelsLevel()) {
 			this.food_pointer.start();
 		}			
 	}
@@ -829,7 +799,7 @@ export default class GameUI extends ui.GameSceneUI {
 
 	private updateUI4End():void {
 		
-		if (!GameInfo.IsJewlsLevel())
+		if (!GameInfo.isJewelsLevel())
 			this.star_bar.visible = true;
 		this.btn_next.visible = true;
 		this.level_note.visible = true;
@@ -881,7 +851,7 @@ export default class GameUI extends ui.GameSceneUI {
 		this.gem_ret.visible = false;
 		this.food_ret.visible = false;
 
-		if (!GameInfo.isJewlsRound)
+		if (!GameInfo.isJewelsRound)
 			this.fruit.visible = true;
 
 		this.avatar.x = this.initial_avatar_x;
@@ -906,7 +876,7 @@ export default class GameUI extends ui.GameSceneUI {
 	}
 
 	private renderLevelLbl(state:boolean):void {
-		let appl_state:boolean = GameInfo.IsJewlsLevel()?state:!state;
+		let appl_state:boolean = GameInfo.isJewelsLevel()?state:!state;
 
 		this.gem_rush_lbl.visible = appl_state;
 		this.level_bar_box.visible = !appl_state;	
@@ -914,7 +884,7 @@ export default class GameUI extends ui.GameSceneUI {
 	}
 
 	private renderLevelBar(state:boolean):void {
-		let appl_state:boolean = GameInfo.IsJewlsLevel()?state:!state;
+		let appl_state:boolean = GameInfo.isJewelsLevel()?state:!state;
 
 		this.jewel_bar_box.visible = appl_state;
 		this.fever_bar.visible = !appl_state;
@@ -963,7 +933,7 @@ export default class GameUI extends ui.GameSceneUI {
 			this.star3.visible = true;			
 		}
 
-		if (!GameInfo.isJewlsRound) {
+		if (!GameInfo.isJewelsRound) {
 			this.renderTargetFoodUI();
 		}
 		this.renderLevelLbl(true);	

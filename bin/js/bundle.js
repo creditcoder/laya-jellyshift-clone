@@ -11,7 +11,7 @@
 	            this.createView(CustomizeSceneUI.uiView);
 	        }
 	    }
-	    CustomizeSceneUI.uiView = { "type": "Dialog", "props": { "width": 640, "runtime": "script/CustomizeDlg.ts", "isModal": true, "height": 1025 }, "compId": 2, "child": [{ "type": "Image", "props": { "y": 242, "x": 0, "width": 640, "skin": "Images/customize_popup.png", "height": 976 }, "compId": 3 }, { "type": "Label", "props": { "y": 249, "x": 200, "width": 237, "text": "CUSTOMIZE", "height": 44, "fontSize": 35, "font": "Arial", "color": "white" }, "compId": 4 }, { "type": "Button", "props": { "y": 253, "x": 492, "width": 35, "var": "btn_close", "stateNum": 1, "skin": "Images/x.png", "name": "close", "height": 35, "drawCallOptimize": true, "cacheAs": "bitmap" }, "compId": 5 }, { "type": "Button", "props": { "zOrder": 10, "y": 806, "x": 206, "presetID": 1, "width": 228, "var": "btn_unlock", "stateNum": 1, "skin": "Images/unlock_random_character_button.png", "name": "btn_unlock", "labelSize": 20, "labelFont": "Arial", "labelColors": "white", "labelAlign": "center", "label": "           UNLOCK\\n           RANDOM", "height": 82, "isPresetRoot": true }, "compId": 298, "child": [{ "type": "Image", "props": { "y": 16, "x": 35, "presetID": 2, "width": 25, "skin": "Images/gem_giant.png", "height": 25 }, "compId": 299 }, { "type": "Label", "props": { "y": 49, "x": 35, "presetID": 3, "width": 29, "var": "lbl_price", "text": "500", "name": "lbl_price", "height": 12, "color": "white" }, "compId": 300 }] }, { "type": "Sprite", "props": { "y": 290, "x": 9, "name": "cust_panel", "height": 500 }, "compId": 311, "child": [{ "type": "Sprite", "props": { "y": 42, "width": 640, "var": "jelly_group", "name": "jelly_group", "height": 600 }, "compId": 304, "child": [{ "type": "Image", "props": { "presetID": 10, "name": "", "y": 0, "x": 199, "width": 242, "skin": "Images/jelly_badge.png", "height": 60 }, "compId": 59, "child": [{ "type": "Label", "props": { "presetID": 11, "y": 9, "x": 54, "width": 136.18896484375, "text": "JELLIES", "height": 35, "fontSize": 35, "font": "Arial", "color": "blue" }, "compId": 60 }] }, { "type": "Button", "props": { "var": "jelly_green_guy", "presetID": 48, "name": "jelly_green_guy", "y": 145, "x": 390, "width": 100, "stateNum": 1, "height": 100 }, "compId": 120, "child": [{ "type": "Image", "props": { "presetID": 49, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 185 }, { "type": "Image", "props": { "presetID": 50, "y": 0, "x": 0, "width": 100, "skin": "model/green_guy.png", "name": "character", "height": 100 }, "compId": 186 }, { "type": "Image", "props": { "presetID": 51, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 187 }] }, { "type": "Button", "props": { "var": "jelly_bright_blue_girl", "presetID": 52, "name": "jelly_bright_blue_girl", "y": 145, "x": 268, "width": 100, "stateNum": 1, "selected": false, "height": 100 }, "compId": 121, "child": [{ "type": "Image", "props": { "presetID": 53, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 182 }, { "type": "Image", "props": { "presetID": 54, "y": -2, "x": 0, "width": 100, "skin": "model/bright_blue_girl.png", "name": "character", "height": 100 }, "compId": 183 }, { "type": "Image", "props": { "presetID": 55, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 184 }] }, { "type": "Button", "props": { "var": "jelly_blue_guy", "presetID": 56, "name": "jelly_blue_guy", "y": 145, "x": 146, "width": 100, "stateNum": 1, "selected": false, "height": 100 }, "compId": 122, "child": [{ "type": "Image", "props": { "presetID": 57, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 178 }, { "type": "Image", "props": { "presetID": 58, "y": 0, "x": 0, "width": 100, "skin": "model/blue_guy.png", "name": "character", "height": 100 }, "compId": 179 }, { "type": "Image", "props": { "presetID": 59, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 180 }] }, { "type": "Button", "props": { "var": "jelly_yellow_guy", "presetID": 60, "name": "jelly_yellow_guy", "y": 258, "x": 390, "width": 100, "stateNum": 1, "height": 100 }, "compId": 123, "child": [{ "type": "Image", "props": { "presetID": 61, "y": -1, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 188 }, { "type": "Image", "props": { "presetID": 62, "y": -1, "x": 0, "width": 100, "skin": "model/yellowguy.png", "name": "character", "height": 100 }, "compId": 189 }, { "type": "Image", "props": { "presetID": 63, "y": -1, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 190 }] }, { "type": "Button", "props": { "var": "jelly_red_guy_cube", "presetID": 64, "name": "jelly_red_guy_cube", "y": 258, "x": 268, "width": 100, "stateNum": 1, "height": 100 }, "compId": 124, "child": [{ "type": "Image", "props": { "presetID": 65, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 191 }, { "type": "Image", "props": { "presetID": 66, "y": 0, "x": 0, "width": 100, "skin": "model/red_guy_cube.png", "name": "character", "height": 100 }, "compId": 192 }, { "type": "Image", "props": { "presetID": 67, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 193 }] }, { "type": "Button", "props": { "var": "jelly_pink_girl", "presetID": 68, "name": "jelly_pink_girl", "y": 258, "x": 146, "width": 100, "stateNum": 1, "height": 100 }, "compId": 125, "child": [{ "type": "Image", "props": { "presetID": 69, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 194 }, { "type": "Image", "props": { "presetID": 70, "y": 0, "x": 0, "width": 100, "skin": "model/pinkgirl.png", "name": "character", "height": 100 }, "compId": 195 }, { "type": "Image", "props": { "presetID": 71, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 196 }] }] }, { "type": "Sprite", "props": { "y": 42, "x": 635, "width": 640, "var": "animals1_group", "pivotY": 0, "pivotX": 0, "name": "animals1_group", "height": 600 }, "compId": 306, "child": [{ "type": "Image", "props": { "y": 0, "x": 200, "presetID": 8, "width": 240, "skin": "Images/rare.png", "height": 60 }, "compId": 55, "child": [{ "type": "Label", "props": { "presetID": 9, "y": 11, "x": 43, "width": 163, "text": "ANIMALS", "height": 40, "fontSize": 35, "font": "Arial", "color": "blue" }, "compId": 56 }] }, { "type": "Button", "props": { "y": 272, "x": 417, "presetID": 144, "width": 100, "var": "animals_Cheetah", "stateNum": 1, "name": "animals_Cheetah", "height": 100 }, "compId": 144, "child": [{ "type": "Image", "props": { "presetID": 145, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 224 }, { "type": "Image", "props": { "presetID": 146, "y": 0, "x": 0, "width": 100, "skin": "model/cheetah.png", "name": "character", "height": 100 }, "compId": 225 }, { "type": "Image", "props": { "presetID": 147, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 226 }] }, { "type": "Button", "props": { "y": 272, "x": 270, "presetID": 148, "width": 100, "var": "animals_Cat", "stateNum": 1, "name": "animals_Cat", "height": 100 }, "compId": 145, "child": [{ "type": "Image", "props": { "presetID": 149, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 227 }, { "type": "Image", "props": { "presetID": 150, "y": 0, "x": 0, "width": 100, "skin": "model/cat.png", "name": "character", "height": 100 }, "compId": 228 }, { "type": "Image", "props": { "presetID": 151, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 229 }] }, { "type": "Button", "props": { "y": 269, "x": 128, "presetID": 152, "width": 100, "var": "animals_Bear", "stateNum": 1, "name": "animals_Bear", "height": 100 }, "compId": 146, "child": [{ "type": "Image", "props": { "presetID": 153, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 230 }, { "type": "Image", "props": { "presetID": 154, "y": 0, "x": 0, "width": 100, "skin": "model/bear.png", "name": "character", "height": 100 }, "compId": 231 }, { "type": "Image", "props": { "presetID": 155, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 232 }] }, { "type": "Button", "props": { "y": 140, "x": 417, "presetID": 156, "width": 100, "var": "animals_Duck", "stateNum": 1, "name": "animals_Duck", "height": 100 }, "compId": 147, "child": [{ "type": "Image", "props": { "presetID": 157, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 233 }, { "type": "Image", "props": { "presetID": 158, "y": 0, "x": 0, "width": 100, "skin": "model/duck.png", "name": "character", "height": 100 }, "compId": 234 }, { "type": "Image", "props": { "presetID": 159, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 235 }] }, { "type": "Button", "props": { "y": 140, "x": 270, "presetID": 160, "width": 100, "var": "animals_Dog", "stateNum": 1, "name": "animals_Dog", "height": 100 }, "compId": 148, "child": [{ "type": "Image", "props": { "presetID": 161, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 236 }, { "type": "Image", "props": { "presetID": 162, "y": 0, "x": 0, "width": 100, "skin": "model/dog.png", "name": "character", "height": 100 }, "compId": 237 }, { "type": "Image", "props": { "presetID": 163, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 238 }] }, { "type": "Button", "props": { "y": 140, "x": 128, "presetID": 164, "width": 100, "var": "animals_Cock", "stateNum": 1, "name": "animals_Cock", "height": 100 }, "compId": 149, "child": [{ "type": "Image", "props": { "presetID": 165, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 239 }, { "type": "Image", "props": { "presetID": 166, "y": 0, "x": 0, "width": 100, "skin": "model/cock.png", "name": "character", "height": 100 }, "compId": 240 }, { "type": "Image", "props": { "presetID": 167, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 241 }] }] }, { "type": "Sprite", "props": { "y": 42, "x": 1283, "width": 640, "var": "animals2_group", "name": "animals2_group", "height": 600 }, "compId": 307, "child": [{ "type": "Image", "props": { "y": 0, "x": 209, "presetID": 6, "width": 240, "skin": "Images/rare.png", "height": 60 }, "compId": 53, "child": [{ "type": "Label", "props": { "presetID": 7, "y": 11, "x": 43, "width": 163, "text": "ANIMALS", "height": 40, "fontSize": 35, "font": "Arial", "color": "blue" }, "compId": 54 }] }, { "type": "Button", "props": { "y": 350, "x": 414, "presetID": 72, "width": 100, "var": "animals_Penguin", "stateNum": 1, "name": "animals_Penguin", "height": 100 }, "compId": 126, "child": [{ "type": "Image", "props": { "presetID": 73, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 197 }, { "type": "Image", "props": { "presetID": 74, "y": 0, "x": 0, "width": 100, "skin": "model/penguin.png", "name": "character", "height": 100 }, "compId": 198 }, { "type": "Image", "props": { "presetID": 75, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 199 }] }, { "type": "Button", "props": { "y": 350, "x": 279, "presetID": 76, "width": 100, "var": "animals_Owl", "stateNum": 1, "name": "animals_Owl", "height": 100 }, "compId": 127, "child": [{ "type": "Image", "props": { "presetID": 77, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 200 }, { "type": "Image", "props": { "presetID": 78, "y": 0, "x": 0, "width": 100, "skin": "model/owl.png", "name": "character", "height": 100 }, "compId": 201 }, { "type": "Image", "props": { "presetID": 79, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 202 }] }, { "type": "Button", "props": { "y": 350, "x": 142, "presetID": 80, "width": 100, "var": "animals_Lion", "stateNum": 1, "name": "animals_Lion", "height": 100 }, "compId": 128, "child": [{ "type": "Image", "props": { "presetID": 81, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 203 }, { "type": "Image", "props": { "presetID": 82, "y": 0, "x": 0, "width": 100, "skin": "model/lion.png", "name": "character", "height": 100 }, "compId": 204 }, { "type": "Image", "props": { "presetID": 83, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 205 }] }, { "type": "Button", "props": { "y": 231, "x": 414, "presetID": 84, "width": 100, "var": "animals_Hippo", "stateNum": 1, "name": "animals_Hippo", "height": 100 }, "compId": 129, "child": [{ "type": "Image", "props": { "presetID": 85, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 206 }, { "type": "Image", "props": { "presetID": 86, "y": 0, "x": 0, "width": 100, "skin": "model/hipo.png", "name": "character", "height": 100 }, "compId": 207 }, { "type": "Image", "props": { "presetID": 87, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 208 }] }, { "type": "Button", "props": { "y": 231, "x": 279, "presetID": 88, "width": 100, "var": "animals_Frog", "stateNum": 1, "name": "animals_Frog", "height": 100 }, "compId": 130, "child": [{ "type": "Image", "props": { "presetID": 89, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 209 }, { "type": "Image", "props": { "presetID": 90, "y": 0, "x": 0, "width": 100, "skin": "model/frog.png", "name": "character", "height": 100 }, "compId": 210 }, { "type": "Image", "props": { "presetID": 91, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 211 }] }, { "type": "Button", "props": { "y": 231, "x": 142, "presetID": 92, "width": 100, "var": "animals_Fox", "stateNum": 1, "name": "animals_Fox", "height": 100 }, "compId": 131, "child": [{ "type": "Image", "props": { "presetID": 93, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 212 }, { "type": "Image", "props": { "presetID": 94, "y": 0, "x": 0, "width": 100, "skin": "model/fox.png", "name": "character", "height": 100 }, "compId": 213 }, { "type": "Image", "props": { "presetID": 95, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 214 }] }, { "type": "Button", "props": { "y": 115, "x": 414, "presetID": 96, "width": 100, "var": "animals_Sheep", "stateNum": 1, "name": "animals_Sheep", "height": 100 }, "compId": 132, "child": [{ "type": "Image", "props": { "presetID": 97, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 215 }, { "type": "Image", "props": { "presetID": 98, "y": 0, "x": 0, "width": 100, "skin": "model/sheep.png", "name": "character", "height": 100 }, "compId": 216 }, { "type": "Image", "props": { "presetID": 99, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 217 }] }, { "type": "Button", "props": { "y": 115, "x": 279, "presetID": 100, "width": 100, "var": "animals_Racoon", "stateNum": 1, "name": "animals_Racoon", "height": 100 }, "compId": 133, "child": [{ "type": "Image", "props": { "presetID": 101, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 218 }, { "type": "Image", "props": { "presetID": 102, "y": 0, "x": 0, "width": 100, "skin": "model/raccon.png", "name": "character", "height": 100 }, "compId": 219 }, { "type": "Image", "props": { "presetID": 103, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 220 }] }, { "type": "Button", "props": { "y": 115, "x": 142, "presetID": 104, "width": 100, "var": "animals_Pig", "stateNum": 1, "name": "animals_Pig", "height": 100 }, "compId": 134, "child": [{ "type": "Image", "props": { "presetID": 105, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 221 }, { "type": "Image", "props": { "presetID": 106, "y": 0, "x": 0, "width": 100, "skin": "model/pig.png", "name": "character", "height": 100 }, "compId": 222 }, { "type": "Image", "props": { "presetID": 107, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 223 }] }] }, { "type": "Sprite", "props": { "y": 42, "x": 1925, "width": 640, "var": "heroes_group", "name": "heroes_group", "height": 600 }, "compId": 308, "child": [{ "type": "Image", "props": { "y": -1, "x": 183, "presetID": 2, "width": 240, "skin": "Images/heroes.png", "height": 60 }, "compId": 49, "child": [{ "type": "Label", "props": { "presetID": 3, "y": 10.5, "x": 47.537109375, "text": "HEROES", "fontSize": 35, "font": "Arial", "color": "blue" }, "compId": 50 }] }, { "type": "Button", "props": { "y": 357, "x": 388, "presetID": 108, "width": 100, "var": "heroes_Magician", "stateNum": 1, "name": "heroes_Magician", "height": 100 }, "compId": 135, "child": [{ "type": "Image", "props": { "presetID": 109, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 266 }, { "type": "Image", "props": { "presetID": 110, "y": 0, "x": 0, "width": 100, "skin": "model/magician.png", "name": "character", "height": 100 }, "compId": 267 }, { "type": "Image", "props": { "presetID": 111, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 268 }] }, { "type": "Button", "props": { "y": 357, "x": 260, "presetID": 112, "width": 100, "var": "heroes_IronMan", "stateNum": 1, "name": "heroes_IronMan", "height": 100 }, "compId": 136, "child": [{ "type": "Image", "props": { "presetID": 113, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 263 }, { "type": "Image", "props": { "presetID": 114, "y": 0, "x": 0, "width": 100, "skin": "model/ironman.png", "name": "character", "height": 100 }, "compId": 264 }, { "type": "Image", "props": { "presetID": 115, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 265 }] }, { "type": "Button", "props": { "y": 357, "x": 132, "presetID": 116, "width": 100, "var": "heroes_Deadpool", "stateNum": 1, "name": "heroes_Deadpool", "height": 100 }, "compId": 137, "child": [{ "type": "Image", "props": { "presetID": 117, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 260 }, { "type": "Image", "props": { "presetID": 118, "y": 0, "x": 0, "width": 100, "skin": "model/deadpool.png", "name": "character", "height": 100 }, "compId": 261 }, { "type": "Image", "props": { "presetID": 119, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 262 }] }, { "type": "Button", "props": { "y": 230, "x": 388, "presetID": 120, "width": 100, "var": "heroes_Cowboy", "stateNum": 1, "name": "heroes_Cowboy", "height": 100 }, "compId": 138, "child": [{ "type": "Image", "props": { "presetID": 121, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 257 }, { "type": "Image", "props": { "presetID": 122, "y": 0, "x": 0, "width": 100, "skin": "model/cowboy.png", "name": "character", "height": 100 }, "compId": 258 }, { "type": "Image", "props": { "presetID": 123, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 259 }] }, { "type": "Button", "props": { "y": 230, "x": 260, "presetID": 124, "width": 100, "var": "heroes_CaptainAmerica", "stateNum": 1, "name": "heroes_CaptainAmerica", "height": 100 }, "compId": 139, "child": [{ "type": "Image", "props": { "presetID": 125, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 254 }, { "type": "Image", "props": { "presetID": 126, "y": 0, "x": 0, "width": 100, "skin": "model/CaptainAmerica.png", "name": "character", "height": 100 }, "compId": 255 }, { "type": "Image", "props": { "presetID": 127, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 256 }] }, { "type": "Button", "props": { "y": 230, "x": 132, "presetID": 128, "width": 100, "var": "heroes_BadGuy", "stateNum": 1, "name": "heroes_BadGuy", "height": 100 }, "compId": 140, "child": [{ "type": "Image", "props": { "presetID": 129, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 251 }, { "type": "Image", "props": { "presetID": 130, "y": 0, "x": 0, "width": 100, "skin": "model/badguy.png", "name": "character", "height": 100 }, "compId": 252 }, { "type": "Image", "props": { "presetID": 131, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 253 }] }, { "type": "Button", "props": { "y": 107, "x": 388, "presetID": 132, "width": 100, "var": "heroes_Robin", "stateNum": 1, "name": "heroes_Robin", "height": 100 }, "compId": 141, "child": [{ "type": "Image", "props": { "presetID": 133, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 248 }, { "type": "Image", "props": { "presetID": 134, "y": 0, "x": 0, "width": 100, "skin": "model/robin.png", "name": "character", "height": 100 }, "compId": 249 }, { "type": "Image", "props": { "presetID": 135, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 250 }] }, { "type": "Button", "props": { "y": 107, "x": 260, "presetID": 136, "width": 100, "var": "heroes_Princess", "stateNum": 1, "name": "heroes_Princess", "height": 100 }, "compId": 142, "child": [{ "type": "Image", "props": { "presetID": 137, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 245 }, { "type": "Image", "props": { "presetID": 138, "y": 0, "x": 0, "width": 100, "skin": "model/princess.png", "name": "character", "height": 100 }, "compId": 246 }, { "type": "Image", "props": { "presetID": 139, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 247 }] }, { "type": "Button", "props": { "y": 107, "x": 132, "presetID": 140, "width": 100, "var": "heroes_PinkGuy", "stateNum": 1, "name": "heroes_PinkGuy", "height": 100 }, "compId": 143, "child": [{ "type": "Image", "props": { "presetID": 141, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 242 }, { "type": "Image", "props": { "presetID": 142, "y": 0, "x": 0, "width": 100, "skin": "model/pinkguy.png", "name": "character", "height": 100 }, "compId": 243 }, { "type": "Image", "props": { "presetID": 143, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 244 }] }] }, { "type": "Sprite", "props": { "y": 42, "x": 2562, "width": 640, "var": "legendary_group", "name": "legendary_group", "height": 600 }, "compId": 309, "child": [{ "type": "Image", "props": { "y": 0, "x": 147, "presetID": 4, "width": 338, "skin": "Images/legendary_ribbon.png", "height": 60 }, "compId": 51, "child": [{ "type": "Label", "props": { "presetID": 5, "y": 11.5, "x": 63, "text": "LEGENDARY", "fontSize": 35, "font": "Arial", "color": "blue" }, "compId": 52 }] }, { "type": "Button", "props": { "y": 353, "x": 394, "presetID": 12, "width": 100, "var": "legendary_Panda", "stateNum": 1, "name": "legendary_Panda", "height": 100 }, "compId": 109, "child": [{ "type": "Image", "props": { "presetID": 13, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 293 }, { "type": "Image", "props": { "presetID": 14, "y": 0, "x": 0, "width": 100, "skin": "model/panda.png", "name": "character", "height": 100 }, "compId": 294 }, { "type": "Image", "props": { "presetID": 15, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 295 }] }, { "type": "Button", "props": { "y": 353, "x": 266, "presetID": 16, "width": 100, "var": "legendary_Lama", "stateNum": 1, "name": "legendary_Lama", "height": 100 }, "compId": 110, "child": [{ "type": "Image", "props": { "presetID": 17, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 290 }, { "type": "Image", "props": { "presetID": 18, "y": 0, "x": 0, "width": 100, "skin": "model/Lama.png", "name": "character", "height": 100 }, "compId": 291 }, { "type": "Image", "props": { "presetID": 19, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 292 }] }, { "type": "Button", "props": { "y": 353, "x": 132, "presetID": 20, "width": 100, "var": "legendary_Crock", "stateNum": 1, "skin": "model/cock.png", "name": "legendary_Crock", "height": 100 }, "compId": 111, "child": [{ "type": "Image", "props": { "presetID": 21, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 287 }, { "type": "Image", "props": { "presetID": 22, "y": -1, "x": 0, "width": 100, "skin": "model/blue_guy.png", "name": "character", "height": 100 }, "compId": 288 }, { "type": "Image", "props": { "presetID": 23, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 289 }] }, { "type": "Button", "props": { "y": 228, "x": 132, "presetID": 24, "width": 100, "var": "legendary_Cow", "stateNum": 1, "name": "legendary_Cow", "height": 100 }, "compId": 112, "child": [{ "type": "Image", "props": { "presetID": 25, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 284 }, { "type": "Image", "props": { "presetID": 26, "y": -1, "x": 0, "width": 100, "skin": "model/cow.png", "name": "character", "height": 100 }, "compId": 285 }, { "type": "Image", "props": { "presetID": 27, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 286 }] }, { "type": "Button", "props": { "y": 228, "x": 394, "presetID": 28, "width": 100, "var": "legendary_CommandoTiger", "stateNum": 1, "name": "legendary_CommandoTiger", "height": 100 }, "compId": 113, "child": [{ "type": "Image", "props": { "presetID": 29, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 281 }, { "type": "Image", "props": { "presetID": 30, "y": -1, "x": 0, "width": 100, "skin": "model/commando_tiger.png", "name": "character", "height": 100 }, "compId": 282 }, { "type": "Image", "props": { "presetID": 31, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 283 }] }, { "type": "Button", "props": { "y": 228, "x": 266, "presetID": 32, "width": 100, "var": "legendary_Coala", "stateNum": 1, "name": "legendary_Coala", "height": 100 }, "compId": 114, "child": [{ "type": "Image", "props": { "presetID": 33, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 278 }, { "type": "Image", "props": { "presetID": 34, "y": 0, "x": 0, "width": 100, "skin": "model/Coala.png", "name": "character", "height": 100 }, "compId": 279 }, { "type": "Image", "props": { "presetID": 35, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 280 }] }, { "type": "Button", "props": { "y": 104, "x": 132, "presetID": 36, "width": 100, "var": "legendary_Sloth", "stateNum": 1, "name": "legendary_Sloth", "height": 100 }, "compId": 117, "child": [{ "type": "Image", "props": { "presetID": 37, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 275 }, { "type": "Image", "props": { "presetID": 38, "y": 0, "x": 0, "width": 100, "skin": "model/sloth.png", "name": "character", "height": 100 }, "compId": 276 }, { "type": "Image", "props": { "presetID": 39, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 277 }] }, { "type": "Button", "props": { "y": 104, "x": 394, "presetID": 40, "width": 100, "var": "legendary_Shark", "stateNum": 1, "name": "legendary_Shark", "height": 100 }, "compId": 118, "child": [{ "type": "Image", "props": { "presetID": 41, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 272 }, { "type": "Image", "props": { "presetID": 42, "y": 0, "x": 0, "width": 100, "skin": "model/shark.png", "name": "character", "height": 100 }, "compId": 273 }, { "type": "Image", "props": { "presetID": 43, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 274 }] }, { "type": "Button", "props": { "y": 104, "x": 266, "presetID": 44, "width": 100, "var": "legendary_Rabbit", "stateNum": 1, "name": "legendary_Rabbit", "height": 100 }, "compId": 119, "child": [{ "type": "Image", "props": { "presetID": 45, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 269 }, { "type": "Image", "props": { "presetID": 46, "y": 0, "x": 0, "width": 100, "skin": "model/rabbit.png", "name": "character", "height": 100 }, "compId": 270 }, { "type": "Image", "props": { "presetID": 47, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 271 }] }] }] }], "loadList": ["Images/customize_popup.png", "Images/x.png", "prefab/btn_unlock.prefab", "prefab/cust_panel.prefab"], "loadList3D": [] };
+	    CustomizeSceneUI.uiView = { "type": "Dialog", "props": { "width": 640, "runtime": "script/CustomizeDlg.ts", "isModal": true, "height": 1025 }, "compId": 2, "child": [{ "type": "Image", "props": { "y": 242, "x": 0, "width": 640, "skin": "Images/customize_popup.png", "height": 976 }, "compId": 3 }, { "type": "Label", "props": { "y": 249, "x": 200, "width": 237, "text": "CUSTOMIZE", "height": 44, "fontSize": 35, "font": "Arial", "color": "white" }, "compId": 4 }, { "type": "Button", "props": { "y": 253, "x": 492, "width": 35, "var": "btn_close", "stateNum": 1, "name": "close", "height": 35, "drawCallOptimize": true, "cacheAs": "bitmap" }, "compId": 5 }, { "type": "Button", "props": { "zOrder": 10, "y": 806, "x": 206, "presetID": 1, "width": 228, "var": "btn_unlock", "stateNum": 1, "skin": "Images/unlock_random_character_button.png", "name": "btn_unlock", "labelSize": 20, "labelFont": "Arial", "labelColors": "white", "labelAlign": "center", "label": "           UNLOCK\\n           RANDOM", "height": 82, "isPresetRoot": true }, "compId": 298, "child": [{ "type": "Image", "props": { "y": 16, "x": 35, "presetID": 2, "width": 25, "skin": "Images/gem_giant.png", "height": 25 }, "compId": 299 }, { "type": "Label", "props": { "y": 49, "x": 35, "presetID": 3, "width": 29, "var": "lbl_price", "text": "500", "name": "lbl_price", "height": 12, "color": "white" }, "compId": 300 }] }, { "type": "Sprite", "props": { "y": 290, "x": 9, "name": "cust_panel", "height": 500 }, "compId": 311, "child": [{ "type": "Sprite", "props": { "y": 42, "width": 640, "var": "jelly_group", "name": "jelly_group", "height": 600 }, "compId": 304, "child": [{ "type": "Image", "props": { "presetID": 10, "name": "", "y": 0, "x": 199, "width": 242, "skin": "Images/jelly_badge.png", "height": 60 }, "compId": 59, "child": [{ "type": "Label", "props": { "presetID": 11, "y": 9, "x": 54, "width": 136.18896484375, "text": "JELLIES", "height": 35, "fontSize": 35, "font": "Arial", "color": "blue" }, "compId": 60 }] }, { "type": "Button", "props": { "var": "jelly_green_guy", "presetID": 48, "name": "jelly_green_guy", "y": 145, "x": 390, "width": 100, "stateNum": 1, "height": 100 }, "compId": 120, "child": [{ "type": "Image", "props": { "presetID": 49, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 185 }, { "type": "Image", "props": { "presetID": 50, "y": 0, "x": 0, "width": 100, "skin": "model/green_guy.png", "name": "character", "height": 100 }, "compId": 186 }, { "type": "Image", "props": { "presetID": 51, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 187 }] }, { "type": "Button", "props": { "var": "jelly_bright_blue_girl", "presetID": 52, "name": "jelly_bright_blue_girl", "y": 145, "x": 268, "width": 100, "stateNum": 1, "selected": false, "height": 100 }, "compId": 121, "child": [{ "type": "Image", "props": { "presetID": 53, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 182 }, { "type": "Image", "props": { "presetID": 54, "y": -2, "x": 0, "width": 100, "skin": "model/bright_blue_girl.png", "name": "character", "height": 100 }, "compId": 183 }, { "type": "Image", "props": { "presetID": 55, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 184 }] }, { "type": "Button", "props": { "var": "jelly_blue_guy", "presetID": 56, "name": "jelly_blue_guy", "y": 145, "x": 146, "width": 100, "stateNum": 1, "selected": false, "height": 100 }, "compId": 122, "child": [{ "type": "Image", "props": { "presetID": 57, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 178 }, { "type": "Image", "props": { "presetID": 58, "y": 0, "x": 0, "width": 100, "skin": "model/blue_guy.png", "name": "character", "height": 100 }, "compId": 179 }, { "type": "Image", "props": { "presetID": 59, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 180 }] }, { "type": "Button", "props": { "var": "jelly_yellow_guy", "presetID": 60, "name": "jelly_yellow_guy", "y": 258, "x": 390, "width": 100, "stateNum": 1, "height": 100 }, "compId": 123, "child": [{ "type": "Image", "props": { "presetID": 61, "y": -1, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 188 }, { "type": "Image", "props": { "presetID": 62, "y": -1, "x": 0, "width": 100, "skin": "model/yellowguy.png", "name": "character", "height": 100 }, "compId": 189 }, { "type": "Image", "props": { "presetID": 63, "y": -1, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 190 }] }, { "type": "Button", "props": { "var": "jelly_red_guy_cube", "presetID": 64, "name": "jelly_red_guy_cube", "y": 258, "x": 268, "width": 100, "stateNum": 1, "height": 100 }, "compId": 124, "child": [{ "type": "Image", "props": { "presetID": 65, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 191 }, { "type": "Image", "props": { "presetID": 66, "y": 0, "x": 0, "width": 100, "skin": "model/red_guy_cube.png", "name": "character", "height": 100 }, "compId": 192 }, { "type": "Image", "props": { "presetID": 67, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 193 }] }, { "type": "Button", "props": { "var": "jelly_pink_girl", "presetID": 68, "name": "jelly_pink_girl", "y": 258, "x": 146, "width": 100, "stateNum": 1, "height": 100 }, "compId": 125, "child": [{ "type": "Image", "props": { "presetID": 69, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 194 }, { "type": "Image", "props": { "presetID": 70, "y": 0, "x": 0, "width": 100, "skin": "model/pinkgirl.png", "name": "character", "height": 100 }, "compId": 195 }, { "type": "Image", "props": { "presetID": 71, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 196 }] }] }, { "type": "Sprite", "props": { "y": 42, "x": 635, "width": 640, "var": "animals1_group", "pivotY": 0, "pivotX": 0, "name": "animals1_group", "height": 600 }, "compId": 306, "child": [{ "type": "Image", "props": { "y": 0, "x": 200, "presetID": 8, "width": 240, "skin": "Images/rare.png", "height": 60 }, "compId": 55, "child": [{ "type": "Label", "props": { "presetID": 9, "y": 11, "x": 43, "width": 163, "text": "ANIMALS", "height": 40, "fontSize": 35, "font": "Arial", "color": "blue" }, "compId": 56 }] }, { "type": "Button", "props": { "y": 272, "x": 417, "presetID": 144, "width": 100, "var": "animals_Cheetah", "stateNum": 1, "name": "animals_Cheetah", "height": 100 }, "compId": 144, "child": [{ "type": "Image", "props": { "presetID": 145, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 224 }, { "type": "Image", "props": { "presetID": 146, "y": 0, "x": 0, "width": 100, "skin": "model/cheetah.png", "name": "character", "height": 100 }, "compId": 225 }, { "type": "Image", "props": { "presetID": 147, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 226 }] }, { "type": "Button", "props": { "y": 272, "x": 270, "presetID": 148, "width": 100, "var": "animals_Cat", "stateNum": 1, "name": "animals_Cat", "height": 100 }, "compId": 145, "child": [{ "type": "Image", "props": { "presetID": 149, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 227 }, { "type": "Image", "props": { "presetID": 150, "y": 0, "x": 0, "width": 100, "skin": "model/cat.png", "name": "character", "height": 100 }, "compId": 228 }, { "type": "Image", "props": { "presetID": 151, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 229 }] }, { "type": "Button", "props": { "y": 269, "x": 128, "presetID": 152, "width": 100, "var": "animals_Bear", "stateNum": 1, "name": "animals_Bear", "height": 100 }, "compId": 146, "child": [{ "type": "Image", "props": { "presetID": 153, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 230 }, { "type": "Image", "props": { "presetID": 154, "y": 0, "x": 0, "width": 100, "skin": "model/bear.png", "name": "character", "height": 100 }, "compId": 231 }, { "type": "Image", "props": { "presetID": 155, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 232 }] }, { "type": "Button", "props": { "y": 140, "x": 417, "presetID": 156, "width": 100, "var": "animals_Duck", "stateNum": 1, "name": "animals_Duck", "height": 100 }, "compId": 147, "child": [{ "type": "Image", "props": { "presetID": 157, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 233 }, { "type": "Image", "props": { "presetID": 158, "y": 0, "x": 0, "width": 100, "skin": "model/duck.png", "name": "character", "height": 100 }, "compId": 234 }, { "type": "Image", "props": { "presetID": 159, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 235 }] }, { "type": "Button", "props": { "y": 140, "x": 270, "presetID": 160, "width": 100, "var": "animals_Dog", "stateNum": 1, "name": "animals_Dog", "height": 100 }, "compId": 148, "child": [{ "type": "Image", "props": { "presetID": 161, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 236 }, { "type": "Image", "props": { "presetID": 162, "y": 0, "x": 0, "width": 100, "skin": "model/dog.png", "name": "character", "height": 100 }, "compId": 237 }, { "type": "Image", "props": { "presetID": 163, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 238 }] }, { "type": "Button", "props": { "y": 140, "x": 128, "presetID": 164, "width": 100, "var": "animals_Cock", "stateNum": 1, "name": "animals_Cock", "height": 100 }, "compId": 149, "child": [{ "type": "Image", "props": { "presetID": 165, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 239 }, { "type": "Image", "props": { "presetID": 166, "y": 0, "x": 0, "width": 100, "skin": "model/cock.png", "name": "character", "height": 100 }, "compId": 240 }, { "type": "Image", "props": { "presetID": 167, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 241 }] }] }, { "type": "Sprite", "props": { "y": 42, "x": 1283, "width": 640, "var": "animals2_group", "name": "animals2_group", "height": 600 }, "compId": 307, "child": [{ "type": "Image", "props": { "y": 0, "x": 209, "presetID": 6, "width": 240, "skin": "Images/rare.png", "height": 60 }, "compId": 53, "child": [{ "type": "Label", "props": { "presetID": 7, "y": 11, "x": 43, "width": 163, "text": "ANIMALS", "height": 40, "fontSize": 35, "font": "Arial", "color": "blue" }, "compId": 54 }] }, { "type": "Button", "props": { "y": 350, "x": 414, "presetID": 72, "width": 100, "var": "animals_Penguin", "stateNum": 1, "name": "animals_Penguin", "height": 100 }, "compId": 126, "child": [{ "type": "Image", "props": { "presetID": 73, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 197 }, { "type": "Image", "props": { "presetID": 74, "y": 0, "x": 0, "width": 100, "skin": "model/penguin.png", "name": "character", "height": 100 }, "compId": 198 }, { "type": "Image", "props": { "presetID": 75, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 199 }] }, { "type": "Button", "props": { "y": 350, "x": 279, "presetID": 76, "width": 100, "var": "animals_Owl", "stateNum": 1, "name": "animals_Owl", "height": 100 }, "compId": 127, "child": [{ "type": "Image", "props": { "presetID": 77, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 200 }, { "type": "Image", "props": { "presetID": 78, "y": 0, "x": 0, "width": 100, "skin": "model/owl.png", "name": "character", "height": 100 }, "compId": 201 }, { "type": "Image", "props": { "presetID": 79, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 202 }] }, { "type": "Button", "props": { "y": 350, "x": 142, "presetID": 80, "width": 100, "var": "animals_Lion", "stateNum": 1, "name": "animals_Lion", "height": 100 }, "compId": 128, "child": [{ "type": "Image", "props": { "presetID": 81, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 203 }, { "type": "Image", "props": { "presetID": 82, "y": 0, "x": 0, "width": 100, "skin": "model/lion.png", "name": "character", "height": 100 }, "compId": 204 }, { "type": "Image", "props": { "presetID": 83, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 205 }] }, { "type": "Button", "props": { "y": 231, "x": 414, "presetID": 84, "width": 100, "var": "animals_Hippo", "stateNum": 1, "name": "animals_Hippo", "height": 100 }, "compId": 129, "child": [{ "type": "Image", "props": { "presetID": 85, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 206 }, { "type": "Image", "props": { "presetID": 86, "y": 0, "x": 0, "width": 100, "skin": "model/hipo.png", "name": "character", "height": 100 }, "compId": 207 }, { "type": "Image", "props": { "presetID": 87, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 208 }] }, { "type": "Button", "props": { "y": 231, "x": 279, "presetID": 88, "width": 100, "var": "animals_Frog", "stateNum": 1, "name": "animals_Frog", "height": 100 }, "compId": 130, "child": [{ "type": "Image", "props": { "presetID": 89, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 209 }, { "type": "Image", "props": { "presetID": 90, "y": 0, "x": 0, "width": 100, "skin": "model/frog.png", "name": "character", "height": 100 }, "compId": 210 }, { "type": "Image", "props": { "presetID": 91, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 211 }] }, { "type": "Button", "props": { "y": 231, "x": 142, "presetID": 92, "width": 100, "var": "animals_Fox", "stateNum": 1, "name": "animals_Fox", "height": 100 }, "compId": 131, "child": [{ "type": "Image", "props": { "presetID": 93, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 212 }, { "type": "Image", "props": { "presetID": 94, "y": 0, "x": 0, "width": 100, "skin": "model/fox.png", "name": "character", "height": 100 }, "compId": 213 }, { "type": "Image", "props": { "presetID": 95, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 214 }] }, { "type": "Button", "props": { "y": 115, "x": 414, "presetID": 96, "width": 100, "var": "animals_Sheep", "stateNum": 1, "name": "animals_Sheep", "height": 100 }, "compId": 132, "child": [{ "type": "Image", "props": { "presetID": 97, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 215 }, { "type": "Image", "props": { "presetID": 98, "y": 0, "x": 0, "width": 100, "skin": "model/sheep.png", "name": "character", "height": 100 }, "compId": 216 }, { "type": "Image", "props": { "presetID": 99, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 217 }] }, { "type": "Button", "props": { "y": 115, "x": 279, "presetID": 100, "width": 100, "var": "animals_Racoon", "stateNum": 1, "name": "animals_Racoon", "height": 100 }, "compId": 133, "child": [{ "type": "Image", "props": { "presetID": 101, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 218 }, { "type": "Image", "props": { "presetID": 102, "y": 0, "x": 0, "width": 100, "skin": "model/raccon.png", "name": "character", "height": 100 }, "compId": 219 }, { "type": "Image", "props": { "presetID": 103, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 220 }] }, { "type": "Button", "props": { "y": 115, "x": 142, "presetID": 104, "width": 100, "var": "animals_Pig", "stateNum": 1, "name": "animals_Pig", "height": 100 }, "compId": 134, "child": [{ "type": "Image", "props": { "presetID": 105, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 221 }, { "type": "Image", "props": { "presetID": 106, "y": 0, "x": 0, "width": 100, "skin": "model/pig.png", "name": "character", "height": 100 }, "compId": 222 }, { "type": "Image", "props": { "presetID": 107, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 223 }] }] }, { "type": "Sprite", "props": { "y": 42, "x": 1925, "width": 640, "var": "heroes_group", "name": "heroes_group", "height": 600 }, "compId": 308, "child": [{ "type": "Image", "props": { "y": -1, "x": 183, "presetID": 2, "width": 240, "skin": "Images/heroes.png", "height": 60 }, "compId": 49, "child": [{ "type": "Label", "props": { "presetID": 3, "y": 10.5, "x": 47.537109375, "text": "HEROES", "fontSize": 35, "font": "Arial", "color": "blue" }, "compId": 50 }] }, { "type": "Button", "props": { "y": 357, "x": 388, "presetID": 108, "width": 100, "var": "heroes_Magician", "stateNum": 1, "name": "heroes_Magician", "height": 100 }, "compId": 135, "child": [{ "type": "Image", "props": { "presetID": 109, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 266 }, { "type": "Image", "props": { "presetID": 110, "y": 0, "x": 0, "width": 100, "skin": "model/magician.png", "name": "character", "height": 100 }, "compId": 267 }, { "type": "Image", "props": { "presetID": 111, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 268 }] }, { "type": "Button", "props": { "y": 357, "x": 260, "presetID": 112, "width": 100, "var": "heroes_IronMan", "stateNum": 1, "name": "heroes_IronMan", "height": 100 }, "compId": 136, "child": [{ "type": "Image", "props": { "presetID": 113, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 263 }, { "type": "Image", "props": { "presetID": 114, "y": 0, "x": 0, "width": 100, "skin": "model/ironman.png", "name": "character", "height": 100 }, "compId": 264 }, { "type": "Image", "props": { "presetID": 115, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 265 }] }, { "type": "Button", "props": { "y": 357, "x": 132, "presetID": 116, "width": 100, "var": "heroes_Deadpool", "stateNum": 1, "name": "heroes_Deadpool", "height": 100 }, "compId": 137, "child": [{ "type": "Image", "props": { "presetID": 117, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 260 }, { "type": "Image", "props": { "presetID": 118, "y": 0, "x": 0, "width": 100, "skin": "model/deadpool.png", "name": "character", "height": 100 }, "compId": 261 }, { "type": "Image", "props": { "presetID": 119, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 262 }] }, { "type": "Button", "props": { "y": 230, "x": 388, "presetID": 120, "width": 100, "var": "heroes_Cowboy", "stateNum": 1, "name": "heroes_Cowboy", "height": 100 }, "compId": 138, "child": [{ "type": "Image", "props": { "presetID": 121, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 257 }, { "type": "Image", "props": { "presetID": 122, "y": 0, "x": 0, "width": 100, "skin": "model/cowboy.png", "name": "character", "height": 100 }, "compId": 258 }, { "type": "Image", "props": { "presetID": 123, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 259 }] }, { "type": "Button", "props": { "y": 230, "x": 260, "presetID": 124, "width": 100, "var": "heroes_CaptainAmerica", "stateNum": 1, "name": "heroes_CaptainAmerica", "height": 100 }, "compId": 139, "child": [{ "type": "Image", "props": { "presetID": 125, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 254 }, { "type": "Image", "props": { "presetID": 126, "y": 0, "x": 0, "width": 100, "skin": "model/CaptainAmerica.png", "name": "character", "height": 100 }, "compId": 255 }, { "type": "Image", "props": { "presetID": 127, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 256 }] }, { "type": "Button", "props": { "y": 230, "x": 132, "presetID": 128, "width": 100, "var": "heroes_BadGuy", "stateNum": 1, "name": "heroes_BadGuy", "height": 100 }, "compId": 140, "child": [{ "type": "Image", "props": { "presetID": 129, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 251 }, { "type": "Image", "props": { "presetID": 130, "y": 0, "x": 0, "width": 100, "skin": "model/badguy.png", "name": "character", "height": 100 }, "compId": 252 }, { "type": "Image", "props": { "presetID": 131, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 253 }] }, { "type": "Button", "props": { "y": 107, "x": 388, "presetID": 132, "width": 100, "var": "heroes_Robin", "stateNum": 1, "name": "heroes_Robin", "height": 100 }, "compId": 141, "child": [{ "type": "Image", "props": { "presetID": 133, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 248 }, { "type": "Image", "props": { "presetID": 134, "y": 0, "x": 0, "width": 100, "skin": "model/robin.png", "name": "character", "height": 100 }, "compId": 249 }, { "type": "Image", "props": { "presetID": 135, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 250 }] }, { "type": "Button", "props": { "y": 107, "x": 260, "presetID": 136, "width": 100, "var": "heroes_Princess", "stateNum": 1, "name": "heroes_Princess", "height": 100 }, "compId": 142, "child": [{ "type": "Image", "props": { "presetID": 137, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 245 }, { "type": "Image", "props": { "presetID": 138, "y": 0, "x": 0, "width": 100, "skin": "model/princess.png", "name": "character", "height": 100 }, "compId": 246 }, { "type": "Image", "props": { "presetID": 139, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 247 }] }, { "type": "Button", "props": { "y": 107, "x": 132, "presetID": 140, "width": 100, "var": "heroes_PinkGuy", "stateNum": 1, "name": "heroes_PinkGuy", "height": 100 }, "compId": 143, "child": [{ "type": "Image", "props": { "presetID": 141, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 242 }, { "type": "Image", "props": { "presetID": 142, "y": 0, "x": 0, "width": 100, "skin": "model/pinkguy.png", "name": "character", "height": 100 }, "compId": 243 }, { "type": "Image", "props": { "presetID": 143, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 244 }] }] }, { "type": "Sprite", "props": { "y": 42, "x": 2562, "width": 640, "var": "legendary_group", "name": "legendary_group", "height": 600 }, "compId": 309, "child": [{ "type": "Image", "props": { "y": 0, "x": 147, "presetID": 4, "width": 338, "skin": "Images/legendary_ribbon.png", "height": 60 }, "compId": 51, "child": [{ "type": "Label", "props": { "presetID": 5, "y": 11.5, "x": 63, "text": "LEGENDARY", "fontSize": 35, "font": "Arial", "color": "blue" }, "compId": 52 }] }, { "type": "Button", "props": { "y": 353, "x": 394, "presetID": 12, "width": 100, "var": "legendary_Panda", "stateNum": 1, "name": "legendary_Panda", "height": 100 }, "compId": 109, "child": [{ "type": "Image", "props": { "presetID": 13, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 293 }, { "type": "Image", "props": { "presetID": 14, "y": 0, "x": 0, "width": 100, "skin": "model/panda.png", "name": "character", "height": 100 }, "compId": 294 }, { "type": "Image", "props": { "presetID": 15, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 295 }] }, { "type": "Button", "props": { "y": 353, "x": 266, "presetID": 16, "width": 100, "var": "legendary_Lama", "stateNum": 1, "name": "legendary_Lama", "height": 100 }, "compId": 110, "child": [{ "type": "Image", "props": { "presetID": 17, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 290 }, { "type": "Image", "props": { "presetID": 18, "y": 0, "x": 0, "width": 100, "skin": "model/Lama.png", "name": "character", "height": 100 }, "compId": 291 }, { "type": "Image", "props": { "presetID": 19, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 292 }] }, { "type": "Button", "props": { "y": 353, "x": 132, "presetID": 20, "width": 100, "var": "legendary_Crock", "stateNum": 1, "skin": "model/cock.png", "name": "legendary_Crock", "height": 100 }, "compId": 111, "child": [{ "type": "Image", "props": { "presetID": 21, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 287 }, { "type": "Image", "props": { "presetID": 22, "y": -1, "x": 0, "width": 100, "skin": "model/blue_guy.png", "name": "character", "height": 100 }, "compId": 288 }, { "type": "Image", "props": { "presetID": 23, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 289 }] }, { "type": "Button", "props": { "y": 228, "x": 132, "presetID": 24, "width": 100, "var": "legendary_Cow", "stateNum": 1, "name": "legendary_Cow", "height": 100 }, "compId": 112, "child": [{ "type": "Image", "props": { "presetID": 25, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 284 }, { "type": "Image", "props": { "presetID": 26, "y": -1, "x": 0, "width": 100, "skin": "model/cow.png", "name": "character", "height": 100 }, "compId": 285 }, { "type": "Image", "props": { "presetID": 27, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 286 }] }, { "type": "Button", "props": { "y": 228, "x": 394, "presetID": 28, "width": 100, "var": "legendary_CommandoTiger", "stateNum": 1, "name": "legendary_CommandoTiger", "height": 100 }, "compId": 113, "child": [{ "type": "Image", "props": { "presetID": 29, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 281 }, { "type": "Image", "props": { "presetID": 30, "y": -1, "x": 0, "width": 100, "skin": "model/commando_tiger.png", "name": "character", "height": 100 }, "compId": 282 }, { "type": "Image", "props": { "presetID": 31, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 283 }] }, { "type": "Button", "props": { "y": 228, "x": 266, "presetID": 32, "width": 100, "var": "legendary_Coala", "stateNum": 1, "name": "legendary_Coala", "height": 100 }, "compId": 114, "child": [{ "type": "Image", "props": { "presetID": 33, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 278 }, { "type": "Image", "props": { "presetID": 34, "y": 0, "x": 0, "width": 100, "skin": "model/Coala.png", "name": "character", "height": 100 }, "compId": 279 }, { "type": "Image", "props": { "presetID": 35, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 280 }] }, { "type": "Button", "props": { "y": 104, "x": 132, "presetID": 36, "width": 100, "var": "legendary_Sloth", "stateNum": 1, "name": "legendary_Sloth", "height": 100 }, "compId": 117, "child": [{ "type": "Image", "props": { "presetID": 37, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 275 }, { "type": "Image", "props": { "presetID": 38, "y": 0, "x": 0, "width": 100, "skin": "model/sloth.png", "name": "character", "height": 100 }, "compId": 276 }, { "type": "Image", "props": { "presetID": 39, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 277 }] }, { "type": "Button", "props": { "y": 104, "x": 394, "presetID": 40, "width": 100, "var": "legendary_Shark", "stateNum": 1, "name": "legendary_Shark", "height": 100 }, "compId": 118, "child": [{ "type": "Image", "props": { "presetID": 41, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 272 }, { "type": "Image", "props": { "presetID": 42, "y": 0, "x": 0, "width": 100, "skin": "model/shark.png", "name": "character", "height": 100 }, "compId": 273 }, { "type": "Image", "props": { "presetID": 43, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 274 }] }, { "type": "Button", "props": { "y": 104, "x": 266, "presetID": 44, "width": 100, "var": "legendary_Rabbit", "stateNum": 1, "name": "legendary_Rabbit", "height": 100 }, "compId": 119, "child": [{ "type": "Image", "props": { "presetID": 45, "y": 0, "x": 0, "width": 100, "skin": "Images/selected_item.png", "name": "selected", "height": 100 }, "compId": 269 }, { "type": "Image", "props": { "presetID": 46, "y": 0, "x": 0, "width": 100, "skin": "model/rabbit.png", "name": "character", "height": 100 }, "compId": 270 }, { "type": "Image", "props": { "presetID": 47, "y": 0, "x": 0, "width": 100, "skin": "Images/locked_item.png", "name": "question", "height": 100 }, "compId": 271 }] }] }] }, { "type": "Sprite", "props": { "y": 253, "x": 492, "width": 35, "texture": "Images/x.png", "height": 35 }, "compId": 312 }], "loadList": ["Images/customize_popup.png", "prefab/btn_unlock.prefab", "prefab/cust_panel.prefab", "Images/x.png"], "loadList3D": [] };
 	    ui.CustomizeSceneUI = CustomizeSceneUI;
 	    REG("ui.CustomizeSceneUI", CustomizeSceneUI);
 	    class GameSceneUI extends Laya.Scene {
@@ -65,7 +65,7 @@
 	        GameInfo.storeGameStatus();
 	        GameInfo.GetLoadLevel();
 	        GameInfo.GetTargetFoodIndex();
-	        GameInfo.IsJewlsLevel();
+	        GameInfo.isJewelsLevel();
 	        GameInfo.GetTerrainInfo();
 	        GameInfo.eatJewelCnt = 0;
 	    }
@@ -97,7 +97,7 @@
 	        GameInfo.terrainNum = GameInfo.round % 8;
 	        if (GameInfo.terrainNum == 0)
 	            GameInfo.terrainNum = 8;
-	        GameInfo.terrainCol = (GameInfo.isJewlsRound) ? Laya.Color.YELLOW : Laya.Color.GRAY;
+	        GameInfo.terrainCol = (GameInfo.isJewelsRound) ? Laya.Color.YELLOW : Laya.Color.GRAY;
 	        var colorList = [Laya.Color.RED, Laya.Color.GREEN, Laya.Color.BLUE, Laya.Color.MAGENTA, Laya.Color.CYAN];
 	        GameInfo.terrainSky = colorList[GameInfo.round % 5];
 	    }
@@ -134,7 +134,7 @@
 	        return ret;
 	    }
 	    static getFoodArray() {
-	        if (GameInfo.isJewlsRound)
+	        if (GameInfo.isJewelsRound)
 	            return [];
 	        let from_idx = Math.floor(GameInfo.targetFood / 3) * 3;
 	        let to_idx = Math.floor(GameInfo.targetFood / 3 + 1) * 3;
@@ -150,9 +150,13 @@
 	        let y = Math.abs(obj1.height - obj2.height) / 2;
 	        return [x, y];
 	    }
-	    static IsJewlsLevel() {
-	        GameInfo.isJewlsRound = (GameInfo.round % 4 == 0);
-	        return GameInfo.isJewlsRound;
+	    static isJewelsLevel() {
+	        GameInfo.isJewelsRound = (GameInfo.round % 4 == 0);
+	        return GameInfo.isJewelsRound;
+	    }
+	    static isCurveLevel() {
+	        let isCurveRound = ((GameInfo.round + 1) % 4 == 0);
+	        return isCurveRound;
 	    }
 	    SetCoin() {
 	    }
@@ -194,6 +198,7 @@
 	    static hexToB(h) { return parseInt((this.cutHex(h)).substring(4, 6), 16); }
 	    static cutHex(h) { return (h.charAt(0) == "#") ? h.substring(1, 7) : h; }
 	}
+	GameInfo.round = 6;
 	GameInfo.baseResPath = "http://localhost/jelly/";
 	GameInfo.models = [
 	    { "idx": 1, "name": "blue_guy", "category": "jelly", "sub_category": "jelly", "active": true, "color": "#1b6efa", "price": 500 },
@@ -367,7 +372,6 @@
 	];
 	GameInfo.org_velocity = 0.2;
 	GameInfo.GAME_STATE = 0;
-	GameInfo.round = 3;
 	GameInfo.modelName = GameInfo.models[0].category + "_" + GameInfo.models[0].name;
 	GameInfo.jewelCnt = 2000;
 	GameInfo.eatJewelCnt = 0;
@@ -380,7 +384,7 @@
 	GameInfo.curPhisingValue = 0;
 	GameInfo.maxPhisingValue = 100;
 	GameInfo.deltaPhisingValue = 20;
-	GameInfo.isJewlsRound = false;
+	GameInfo.isJewelsRound = false;
 	GameInfo.terrainNum = 0;
 	GameInfo.groundColor = "ffffff";
 	GameInfo.current_fever = 0;
@@ -949,6 +953,7 @@
 	        this.distToPillar = 1000;
 	        this.obstaclesCount = 0;
 	        this.bMoveState = false;
+	        this.current_dir = "z";
 	        this.velocity = 0.2;
 	        this.backdelta = 0.2;
 	        this.fever = 0;
@@ -958,11 +963,18 @@
 	        this.camerastart = false;
 	        this.bCustomize = false;
 	        this.vdelta = new Laya.Vector3(0, 0, 0);
+	        this.rotate_cnt = 0;
 	        this.pillar_mat = null;
 	        this.createdPieceTime = 0;
 	        this.totalCnt = 0;
 	    }
 	    onAwake() {
+	    }
+	    EnableCameraAnim(bFlag) {
+	        var animator1 = this.camera.getComponent(Laya.Animator);
+	        if (animator1 != null) {
+	            animator1.enabled = bFlag;
+	        }
 	    }
 	    ZoomInCamera() {
 	        var animator1 = this.camera.getComponent(Laya.Animator);
@@ -984,7 +996,7 @@
 	    }
 	    EndCamera() {
 	        var animator1 = this.camera.getComponent(Laya.Animator);
-	        if (animator1 != null) {
+	        if (animator1 != null && animator1.enabled == true) {
 	            animator1.play("endCamera");
 	        }
 	        this.ShowEndParticle();
@@ -998,62 +1010,118 @@
 	    updateCustomState(state) {
 	        this.bCustomize = state;
 	    }
+	    mouseMoveProc() {
+	        if (GameInfo.GAME_STATE >= 2 || this.bCustomize == true)
+	            return;
+	        if (this.is_start == false) {
+	            this.owner.event("game_started");
+	            this.obstaclesCount = GameInfo.GetObstacleCount();
+	            var subModel1 = this.player.getChildAt(1);
+	            var animator1 = subModel1.getComponent(Laya.Animator);
+	            if (!animator1)
+	                animator1 = subModel1.getChildAt(0).getComponent(Laya.Animator);
+	            if (animator1) {
+	                animator1.play("startCharacter");
+	            }
+	            this.bMoveState = true;
+	            this.is_start = true;
+	            this.StartCamera();
+	            var temp = this.player.transform.localPosition;
+	            this.initpos.setValue(0, temp.y, 0);
+	            this.SetShadowScriptToParticles();
+	        }
+	        let offset_dir = "down";
+	        let delta_y = Laya.stage.mouseY - this.current_mouseY;
+	        if (delta_y < 0)
+	            offset_dir = "up";
+	        let val_a = 1.9, val_b = 2.1;
+	        let lim_a = 0.25, lim_b = 1.95;
+	        if (Math.abs(delta_y) > 2) {
+	            let numY = this.player.transform.localScale.y;
+	            let numX = this.player.transform.localScale.x;
+	            if (offset_dir == "up") {
+	                numY += 0.1;
+	                if (numY > lim_b)
+	                    numY = lim_b;
+	            }
+	            if (offset_dir == "down") {
+	                numY -= 0.1;
+	                if (numY < lim_a)
+	                    numY = lim_a;
+	            }
+	            numX = (val_b - numY) * val_a / val_b;
+	            this.player.transform.localScale = new Laya.Vector3(numX, numY, this.player.transform.localScale.z);
+	        }
+	        this.current_mouseY = Laya.stage.mouseY;
+	        this.rigidbody.colliderShape.localOffset.y = this.player.transform.localScale.y / 2;
+	    }
 	    onUpdate() {
 	        if (GameInfo.GAME_STATE == 2) {
 	            return;
 	        }
-	        Laya.stage.on(Laya.Event.MOUSE_MOVE, this, function () {
-	            if (GameInfo.GAME_STATE >= 2 || this.bCustomize == true)
-	                return;
-	            if (this.is_start == false) {
-	                this.owner.event("game_started");
-	                this.obstaclesCount = GameInfo.GetObstacleCount();
-	                var subModel1 = this.player.getChildAt(1);
-	                var animator1 = subModel1.getComponent(Laya.Animator);
-	                if (!animator1)
-	                    animator1 = subModel1.getChildAt(0).getComponent(Laya.Animator);
-	                if (animator1) {
-	                    animator1.play("startCharacter");
-	                }
-	                this.bMoveState = true;
-	                this.is_start = true;
-	                this.StartCamera();
-	                var temp = this.player.transform.localPosition;
-	                this.initpos.setValue(temp.x, temp.y, temp.z);
-	                this.SetShadowScriptToParticles();
-	            }
-	            let offset_dir = "down";
-	            let delta_y = Laya.stage.mouseY - this.current_mouseY;
-	            if (delta_y < 0)
-	                offset_dir = "up";
-	            let val_a = 1.9, val_b = 2.1;
-	            let lim_a = 0.25, lim_b = 1.95;
-	            if (Math.abs(delta_y) > 2) {
-	                let numY = this.player.transform.localScale.y;
-	                let numX = this.player.transform.localScale.x;
-	                if (offset_dir == "up") {
-	                    numY += 0.1;
-	                    if (numY > lim_b)
-	                        numY = lim_b;
-	                }
-	                if (offset_dir == "down") {
-	                    numY -= 0.1;
-	                    if (numY < lim_a)
-	                        numY = lim_a;
-	                }
-	                numX = (val_b - numY) * val_a / val_b;
-	                this.player.transform.localScale = new Laya.Vector3(numX, numY, this.player.transform.localScale.z);
-	            }
-	            this.current_mouseY = Laya.stage.mouseY;
-	            this.rigidbody.colliderShape.localOffset.y = this.player.transform.localScale.y / 2;
+	        Laya.stage.on(Laya.Event.MOUSE_DOWN, this, () => {
+	            Laya.stage.on(Laya.Event.MOUSE_MOVE, this, this.mouseMoveProc);
 	        });
-	        this.InitPlayerRoatate();
-	        if (!this.is_start)
+	        Laya.stage.on(Laya.Event.MOUSE_UP, this, () => {
+	            Laya.stage.off(Laya.Event.MOUSE_MOVE, this, this.mouseMoveProc);
+	        });
+	        if (this.current_dir == "z" || this.current_dir == "x")
+	            this.InitPlayerRoatate();
+	        if (!this.is_start) {
+	            this.player.addChild(this.cube);
+	            this.player.addChild(this.cubeDownside);
 	            return;
+	        }
 	        if (this.bMoveState) {
-	            this.vdelta.z = this.velocity;
-	            if (GameInfo.fever_ok)
-	                this.vdelta.z += 0.07;
+	            if (this.current_dir == "z") {
+	                this.vdelta.z = this.velocity;
+	            }
+	            else if (this.current_dir == "r1_1") {
+	                this.vdelta.z = this.velocity * Math.sin(75 / 180 * 3.14);
+	                this.vdelta.x = (-1) * this.velocity * Math.cos(75 / 180 * 3.14);
+	                if (this.rotate_cnt == 0) {
+	                    this.player.transform.rotate(new Laya.Vector3(0, -30, 0), true, false);
+	                    this.rotate_cnt = 1;
+	                    this.camPos = this.scene.addChild(new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(this.delta, this.delta, this.delta)));
+	                    this.camPos.meshRenderer.enable = false;
+	                    this.player.addChild(this.camPos);
+	                    this.camPos.transform.position = this.camera.transform.position;
+	                    this.camPos.transform.rotation = this.camera.transform.rotation;
+	                    this.EnableCameraAnim(false);
+	                }
+	            }
+	            else if (this.current_dir == "r1_2") {
+	                this.vdelta.z = this.velocity * Math.sin(45 / 180 * 3.14);
+	                this.vdelta.x = (-1) * this.velocity * Math.cos(45 / 180 * 3.14);
+	                if (this.rotate_cnt == 1) {
+	                    this.player.transform.rotate(new Laya.Vector3(0, -30, 0), true, false);
+	                    this.rotate_cnt = 2;
+	                }
+	            }
+	            else if (this.current_dir == "r1_3") {
+	                this.vdelta.z = this.velocity * Math.sin(15 / 180 * 3.14);
+	                this.vdelta.x = (-1) * this.velocity * Math.cos(15 / 180 * 3.14);
+	                if (this.rotate_cnt == 2) {
+	                    this.player.transform.rotate(new Laya.Vector3(0, -30, 0), true, false);
+	                    this.rotate_cnt = 3;
+	                }
+	            }
+	            else if (this.current_dir == "x") {
+	                this.vdelta.x = (-1) * this.velocity;
+	                this.vdelta.z = 0;
+	                this.initpos.z = 1;
+	            }
+	            if (this.current_dir != "z") {
+	                this.camera.transform.position = this.camPos.transform.position;
+	                this.camera.transform.rotation = this.camPos.transform.rotation;
+	            }
+	            if (GameInfo.fever_ok) {
+	                let p = 0.07;
+	                if (this.current_dir == "z")
+	                    this.vdelta.z += p;
+	                else if (this.current_dir == "x")
+	                    this.vdelta.x -= p;
+	            }
 	            this.player_box.transform.translate(this.vdelta, true);
 	        }
 	        else {
@@ -1066,7 +1134,10 @@
 	                this.stopTime = 0;
 	                this.bMoveState = true;
 	            }
-	            this.player_box.transform.localPosition = new Laya.Vector3(this.player_box.transform.localPosition.x, this.player_box.transform.localPosition.y, this.player_box.transform.localPosition.z - this.backdelta);
+	            if (this.current_dir == "z")
+	                this.player_box.transform.localPosition = new Laya.Vector3(this.player_box.transform.localPosition.x, this.player_box.transform.localPosition.y, this.player_box.transform.localPosition.z - this.backdelta);
+	            else if (this.current_dir == "x")
+	                this.player_box.transform.localPosition = new Laya.Vector3(this.player_box.transform.localPosition.x + this.backdelta, this.player_box.transform.localPosition.y, this.player_box.transform.localPosition.z);
 	            return;
 	        }
 	        this.pillar = this.FindClosestPillar();
@@ -1089,14 +1160,20 @@
 	            this.player.transform.localPosition = this.initpos;
 	        }
 	        this.length = this.distance;
-	        let position = new Laya.Vector3(this.player.transform.position.x, this.player.transform.position.y, this.pillar.transform.position.z + 0.2);
+	        let position = new Laya.Vector3(0, 0, this.length + 0.2);
 	        if (this.distance < 1000 && this.distance > 0) {
 	            this.cube.active = true;
 	            this.cubeDownside.active = true;
-	            this.cube.transform.position = position;
-	            this.cube.transform.localScale = new Laya.Vector3(this.player.transform.localScale.x * 1.3, this.player.transform.localScale.y, 0.1);
-	            this.cubeDownside.transform.position = new Laya.Vector3(this.player.transform.position.x, this.player.transform.position.y, this.player.transform.position.z);
-	            this.cubeDownside.transform.localScale = new Laya.Vector3(this.player.transform.localScale.x * 1.3, this.player.transform.localScale.y, this.length);
+	            this.cube.transform.localPosition = position;
+	            this.cubeDownside.transform.localPosition = new Laya.Vector3(0, 0, 0);
+	            if (this.current_dir == "z" || this.current_dir == "x") {
+	                this.cube.transform.localScale = new Laya.Vector3(1.3, 1, 0.1);
+	                this.cubeDownside.transform.localScale = new Laya.Vector3(1.3, 1, this.length);
+	            }
+	            else {
+	                this.cube.transform.localScale = new Laya.Vector3(0, 0, 0);
+	                this.cubeDownside.transform.localScale = new Laya.Vector3(0, 0, 0);
+	            }
 	        }
 	        else {
 	            if (this.cube)
@@ -1106,11 +1183,15 @@
 	        }
 	        this.updateGameInfo();
 	    }
+	    updateDir(dir) {
+	        this.current_dir = dir;
+	    }
 	    InitPlayerRoatate() {
 	        var delta = this.player.transform.localRotationEuler;
-	        delta.x = -delta.x;
-	        delta.y = -delta.y;
-	        delta.z = -delta.z;
+	        var target = new Laya.Vector3(0, 0, 0);
+	        if (this.current_dir == "x")
+	            target.y = -90;
+	        Laya.Vector3.subtract(target, delta, delta);
 	        this.player.transform.rotate(delta, true, false);
 	    }
 	    ShowSpeedParticle() {
@@ -1199,6 +1280,7 @@
 	        this.owner.event("update_path", GameInfo.curPassedLen / maxlen);
 	    }
 	    startFollow(sprite, cam, dz) {
+	        this.rotate_cnt = 0;
 	        this.scene = sprite;
 	        this.camera = cam;
 	        this.offset = dz;
@@ -1237,10 +1319,14 @@
 	    ExplodePillar() {
 	        if (!GameInfo.fever_ok)
 	            return;
-	        var translevel = this.scene.getChildByName("Level");
-	        var obstacles = translevel.getChildByName("obstacles");
-	        var subObj = obstacles.getChildAt(this.closeObjectIndex - 1);
-	        this.pillar_mat = subObj.getChildAt(0).meshRenderer.material;
+	        let translevel = this.scene.getChildByName("Level");
+	        let obstacles = translevel.getChildByName("obstacles");
+	        let subObj = obstacles.getChildAt(this.closeObjectIndex - 1);
+	        let tmp = subObj.getChildAt(0).meshRenderer;
+	        if (!tmp) {
+	            return;
+	        }
+	        this.pillar_mat = tmp.material;
 	        this.pieceArray = new Array(subObj.numChildren);
 	        for (var i = 0; i < subObj.numChildren - 1; i++) {
 	            var trigger = subObj.getChildAt(i).getComponent(TriggerCollisionScript);
@@ -1260,7 +1346,12 @@
 	        }
 	    }
 	    vibration() {
-	        navigator.vibrate(100);
+	        try {
+	            window.navigator.vibrate(100);
+	        }
+	        catch (e) {
+	            console.log("navigator exp...", e.toString());
+	        }
 	    }
 	    SetNextCloseIndex() {
 	        this.distToPillar = 1000;
@@ -1497,7 +1588,7 @@
 	        GameInfo$1.storeGameStatus();
 	        GameInfo$1.GetLoadLevel();
 	        GameInfo$1.GetTargetFoodIndex();
-	        GameInfo$1.IsJewlsLevel();
+	        GameInfo$1.isJewelsLevel();
 	        GameInfo$1.GetTerrainInfo();
 	        GameInfo$1.eatJewelCnt = 0;
 	    }
@@ -1529,7 +1620,7 @@
 	        GameInfo$1.terrainNum = GameInfo$1.round % 8;
 	        if (GameInfo$1.terrainNum == 0)
 	            GameInfo$1.terrainNum = 8;
-	        GameInfo$1.terrainCol = (GameInfo$1.isJewlsRound) ? Laya.Color.YELLOW : Laya.Color.GRAY;
+	        GameInfo$1.terrainCol = (GameInfo$1.isJewelsRound) ? Laya.Color.YELLOW : Laya.Color.GRAY;
 	        var colorList = [Laya.Color.RED, Laya.Color.GREEN, Laya.Color.BLUE, Laya.Color.MAGENTA, Laya.Color.CYAN];
 	        GameInfo$1.terrainSky = colorList[GameInfo$1.round % 5];
 	    }
@@ -1566,7 +1657,7 @@
 	        return ret;
 	    }
 	    static getFoodArray() {
-	        if (GameInfo$1.isJewlsRound)
+	        if (GameInfo$1.isJewelsRound)
 	            return [];
 	        let from_idx = Math.floor(GameInfo$1.targetFood / 3) * 3;
 	        let to_idx = Math.floor(GameInfo$1.targetFood / 3 + 1) * 3;
@@ -1582,9 +1673,13 @@
 	        let y = Math.abs(obj1.height - obj2.height) / 2;
 	        return [x, y];
 	    }
-	    static IsJewlsLevel() {
-	        GameInfo$1.isJewlsRound = (GameInfo$1.round % 4 == 0);
-	        return GameInfo$1.isJewlsRound;
+	    static isJewelsLevel() {
+	        GameInfo$1.isJewelsRound = (GameInfo$1.round % 4 == 0);
+	        return GameInfo$1.isJewelsRound;
+	    }
+	    static isCurveLevel() {
+	        let isCurveRound = ((GameInfo$1.round + 1) % 4 == 0);
+	        return isCurveRound;
 	    }
 	    SetCoin() {
 	    }
@@ -1626,6 +1721,7 @@
 	    static hexToB(h) { return parseInt((this.cutHex(h)).substring(4, 6), 16); }
 	    static cutHex(h) { return (h.charAt(0) == "#") ? h.substring(1, 7) : h; }
 	}
+	GameInfo$1.round = 6;
 	GameInfo$1.baseResPath = "http://localhost/jelly/";
 	GameInfo$1.models = [
 	    { "idx": 1, "name": "blue_guy", "category": "jelly", "sub_category": "jelly", "active": true, "color": "#1b6efa", "price": 500 },
@@ -1799,7 +1895,6 @@
 	];
 	GameInfo$1.org_velocity = 0.2;
 	GameInfo$1.GAME_STATE = 0;
-	GameInfo$1.round = 3;
 	GameInfo$1.modelName = GameInfo$1.models[0].category + "_" + GameInfo$1.models[0].name;
 	GameInfo$1.jewelCnt = 2000;
 	GameInfo$1.eatJewelCnt = 0;
@@ -1812,7 +1907,7 @@
 	GameInfo$1.curPhisingValue = 0;
 	GameInfo$1.maxPhisingValue = 100;
 	GameInfo$1.deltaPhisingValue = 20;
-	GameInfo$1.isJewlsRound = false;
+	GameInfo$1.isJewelsRound = false;
 	GameInfo$1.terrainNum = 0;
 	GameInfo$1.groundColor = "ffffff";
 	GameInfo$1.current_fever = 0;
@@ -1945,6 +2040,32 @@
 	    }
 	}
 
+	class TriggerCollisionScript4Round extends Laya.Script3D {
+	    constructor() {
+	        super();
+	    }
+	    TriggerCollisionScript() {
+	    }
+	    onTriggerEnter(other) {
+	        if (other.owner.name == "jelly") {
+	            this.owner.event("trigger", this.owner.name);
+	            console.log("this.owner.name", this.owner.name);
+	        }
+	    }
+	    onUpdate() {
+	    }
+	    onTriggerStay(other) {
+	    }
+	    onTriggerExit(other) {
+	    }
+	    onCollisionEnter(collision) {
+	    }
+	    onCollisionStay(collision) {
+	    }
+	    onCollisionExit(collision) {
+	    }
+	}
+
 	class GameUI extends ui.GameSceneUI {
 	    constructor() {
 	        super();
@@ -2012,7 +2133,7 @@
 	    nextRound() {
 	        Sound.playLevelCompleteSound();
 	        if (parseInt(this.eat_jewel_cnt.text) > 0) {
-	            if (GameInfo.IsJewlsLevel()) {
+	            if (GameInfo.isJewelsLevel()) {
 	                let cj = parseInt(this.current_jewel.text);
 	                let ej = parseInt(this.eat_jewel_cnt.text);
 	                cj += ej;
@@ -2114,26 +2235,24 @@
 	        this.curCamera.transform.position = new Laya.Vector3(this.curCamera.transform.position.x, this.curCamera.transform.position.y, this.curCamera.transform.position.z - 1);
 	        GameInfo.scene = this.curScene;
 	        var dlight = this.curScene.getChildByName("Directional light");
+	        if (GameInfo.isCurveLevel()) {
+	            try {
+	                this.curve_proc();
+	            }
+	            catch (e) {
+	                console.log("curve level init...", e.toString);
+	            }
+	        }
 	        this.pillar_proc();
-	        if (GameInfo.IsJewlsLevel()) {
+	        if (GameInfo.isJewelsLevel()) {
 	            this.jewel_proc();
 	        }
 	        this.SetSkyInfo();
 	        this.initPlayer();
 	        this.initFood();
 	        this.initUiInfo();
-	        if (!GameInfo.IsJewlsLevel())
+	        if (!GameInfo.isJewelsLevel())
 	            return;
-	        var loaddata = [
-	            { url: "res/particles/glow_jiesuan.png", type: Laya.Loader.IMAGE },
-	            { url: "res/particles/Jiesuan_eff.part", type: Laya.Loader.JSON },
-	            { url: "res/particles/heart.png", type: Laya.Loader.IMAGE },
-	            { url: "res/particles/texture.png", type: Laya.Loader.IMAGE },
-	            { url: "res/particles/RadiusMode.part", type: Laya.Loader.JSON },
-	            { url: "res/particles/particleNew.part", type: Laya.Loader.JSON },
-	            { url: "res/particles/GravityMode.part", type: Laya.Loader.JSON }
-	        ];
-	        Laya.loader.load(loaddata, Laya.Handler.create(this, this.initParticle2D));
 	    }
 	    initPlayer() {
 	        let model_name_arr = GameInfo.modelName.split('_');
@@ -2220,7 +2339,7 @@
 	                    }
 	            }
 	        }
-	        if (!GameInfo.IsJewlsLevel())
+	        if (!GameInfo.isJewelsLevel())
 	            return;
 	        let ground_list = this.curScene.getChildByName("Level").getChildByName("1");
 	        for (let i = 0; i < ground_list.numChildren - 1; i++) {
@@ -2361,6 +2480,18 @@
 	            }
 	        }
 	    }
+	    curve_proc() {
+	        var translevel = this.curScene.getChildByName("Level");
+	        var rd_cols = translevel.getChildByName("corner_to_right");
+	        for (var i = 0; i < rd_cols.numChildren; i++) {
+	            var subObj = rd_cols.getChildAt(i);
+	            subObj.on("trigger", this, this.updatePlayerDir);
+	            subObj.addComponent(TriggerCollisionScript4Round);
+	        }
+	    }
+	    updatePlayerDir(dir) {
+	        this.player_pointer.updateDir(dir);
+	    }
 	    jewel_proc() {
 	        var translevel = this.curScene.getChildByName("Level");
 	        var jewel_groups = translevel.getChildByName("jewels");
@@ -2458,34 +2589,17 @@
 	        this.player_body.getComponent(Player).ShowTrail(false);
 	        this.setOrgSky();
 	    }
-	    initParticle2D() {
-	        if (this.sp == null) {
-	            var settings = Laya.loader.getRes("res/particles/RadiusMode.part");
-	            this.sp = new Laya.Particle2D(settings);
-	            this.sp.mouseEnabled = false;
-	            this.addChild(this.sp);
-	            this.sp.pos(this.width / 2, this.height / 2 + 100);
-	            this.sp.visible = true;
-	            Laya.timer.once(1, this, () => {
-	                this.sp.visible = false;
-	            });
-	        }
-	    }
 	    updateJewelBar() {
 	        Sound.playGemRushGemSound();
 	        this.jewel_bar.value = GameInfo.eatJewelCnt / (30 * 5);
 	        GameInfo.eatJewelCnt += 5;
 	        this.eat_jewel_cnt.text = GameInfo.eatJewelCnt.toString();
-	        this.sp.visible = true;
-	        Laya.timer.once(100, this, this.showParticle);
-	    }
-	    showParticle() {
-	        this.sp.visible = false;
+	        this.player_pointer.ShowSpeedParticle();
 	    }
 	    startRound() {
 	        this.updateUI4Start();
 	        Sound.playGameStartSound();
-	        if (!GameInfo.IsJewlsLevel()) {
+	        if (!GameInfo.isJewelsLevel()) {
 	            this.food_pointer.start();
 	        }
 	    }
@@ -2526,7 +2640,7 @@
 	        this.shine_img.rotation -= 2;
 	    }
 	    updateUI4End() {
-	        if (!GameInfo.IsJewlsLevel())
+	        if (!GameInfo.isJewelsLevel())
 	            this.star_bar.visible = true;
 	        this.btn_next.visible = true;
 	        this.level_note.visible = true;
@@ -2567,7 +2681,7 @@
 	        this.level_note.visible = false;
 	        this.gem_ret.visible = false;
 	        this.food_ret.visible = false;
-	        if (!GameInfo.isJewlsRound)
+	        if (!GameInfo.isJewelsRound)
 	            this.fruit.visible = true;
 	        this.avatar.x = this.initial_avatar_x;
 	        this.fruit.x = this.initial_food_x;
@@ -2582,12 +2696,12 @@
 	        GameInfo.targetFoodEat = false;
 	    }
 	    renderLevelLbl(state) {
-	        let appl_state = GameInfo.IsJewlsLevel() ? state : !state;
+	        let appl_state = GameInfo.isJewelsLevel() ? state : !state;
 	        this.gem_rush_lbl.visible = appl_state;
 	        this.level_bar_box.visible = !appl_state;
 	    }
 	    renderLevelBar(state) {
-	        let appl_state = GameInfo.IsJewlsLevel() ? state : !state;
+	        let appl_state = GameInfo.isJewelsLevel() ? state : !state;
 	        this.jewel_bar_box.visible = appl_state;
 	        this.fever_bar.visible = !appl_state;
 	        this.game_status.visible = !appl_state;
@@ -2627,7 +2741,7 @@
 	            this.star2.visible = true;
 	            this.star3.visible = true;
 	        }
-	        if (!GameInfo.isJewlsRound) {
+	        if (!GameInfo.isJewelsRound) {
 	            this.renderTargetFoodUI();
 	        }
 	        this.renderLevelLbl(true);
@@ -2705,11 +2819,11 @@
 	    }
 	}
 	GameConfig.width = 640;
-	GameConfig.height = 1136;
-	GameConfig.scaleMode = "fixedwidth";
+	GameConfig.height = 960;
+	GameConfig.scaleMode = "fixedauto";
 	GameConfig.screenMode = "none";
-	GameConfig.alignV = "top";
-	GameConfig.alignH = "left";
+	GameConfig.alignV = "middle";
+	GameConfig.alignH = "center";
 	GameConfig.startScene = "GameScene.scene";
 	GameConfig.sceneRoot = "";
 	GameConfig.debug = false;
