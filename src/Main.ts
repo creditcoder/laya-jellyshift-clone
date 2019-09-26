@@ -11,7 +11,7 @@ class Main {
 		Laya.stage.screenMode = GameConfig.screenMode;
 		Laya.stage.alignV = GameConfig.alignV;
 		Laya.stage.alignH = GameConfig.alignH;
-		Laya.stage.bgColor = "#00ff00";
+		Laya.stage.bgColor = "#148be8";
 
 		Laya.URL.exportSceneToJson = GameConfig.exportSceneToJson;
 

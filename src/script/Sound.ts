@@ -42,7 +42,16 @@ export default class Sound {
     public static playJellyLandSound():void {
         this.play("JellyLand");
     }
+    public static playCustomizeCloseSound():void {
+        this.play("CustomizeClose");
+    }
+    public static playCustomizeOpenSound():void {
+        this.play("CustomizeOpen");
+    }
+    public static playCustomizeRandomSound():void {
+        this.play("CustomizeRandomBleep");
+    }
     public static playCustomizeSelectSound():void {
         this.play("CustomizeSelect");
-    }
+    }    
 }

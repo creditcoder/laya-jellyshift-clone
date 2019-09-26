@@ -1,19 +1,24 @@
 export default class GameInfo {
 
     public static round:number = 6;
+    public static jewelCnt:number = 2000;
+
     // public static baseResPath = "https://beatstreet.digitalgalaxy.cn/jelly/";
     // public static baseResPath = "https://games.gamesafari.cn/jelly/";
     public static baseResPath:string = "http://localhost/jelly/";
+    public static round_period:number = 12;
+    public static jewel_unit = 5;
 
     public static models = [
         {"idx":1, "name":"blue_guy", "category":"jelly", "sub_category":"jelly", "active":true, "color":"#1b6efa", "price":500}
         , {"idx":2, "name":"bright_blue_girl", "category":"jelly", "sub_category":"jelly", "active":false, "color":"#1efefd", "price":500}
         , {"idx":3, "name":"green_guy", "category":"jelly", "sub_category":"jelly", "active":false, "color":"#7df81a", "price":500}
         , {"idx":4, "name":"pink_girl", "category":"jelly", "sub_category":"jelly", "active":false, "color":"#e175ff", "price":500}
-        , {"idx":5, "name":"red_guy_cube", "category":"jelly", "sub_category":"jelly", "active":false, "color":"#fa246d", "price":500}
+        , {"idx":5, "name":"Snarglius", "category":"jelly", "sub_category":"jelly", "active":false, "color":"#fdb381", "price":500}
+        // , {"idx":5, "name":"red_guy_cube", "category":"jelly", "sub_category":"jelly", "active":false, "color":"#fa246d", "price":500}
         , {"idx":6, "name":"yellow_guy", "category":"jelly", "sub_category":"jelly", "active":false, "color":"#fbe21c", "price":500}
         
-        , {"idx":7, "name":"Bear", "category":"animals", "sub_category":"animals1", "active":false, "color":"#dc7126", "price":1000}
+        , {"idx":7, "name":"Bear", "category":"animals", "sub_category":"animals1", "active":false, "color":"#ff9e4d", "price":1000}
         , {"idx":8, "name":"Cat", "category":"animals", "sub_category":"animals1", "active":false, "color":"#718ad4", "price":1000}
         , {"idx":9, "name":"Cheetah", "category":"animals", "sub_category":"animals1", "active":false, "color":"#ffc83c", "price":1000}
         , {"idx":10, "name":"Cock", "category":"animals", "sub_category":"animals1", "active":false, "color":"#e70503", "price":1000}
@@ -29,26 +34,26 @@ export default class GameInfo {
         , {"idx":20, "name":"Racoon", "category":"animals", "sub_category":"animals2", "active":false, "color":"#475068", "price":1500}
         , {"idx":21, "name":"Sheep", "category":"animals", "sub_category":"animals2", "active":false, "color":"#d4e7e6", "price":1500}
     
-        , {"idx":22, "name":"BadGuy", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#dc7126", "price":2000}
-        , {"idx":23, "name":"CaptainAmerica", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#dc7126", "price":2000}
-        , {"idx":24, "name":"Cowboy", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#dc7126", "price":2000}
-        , {"idx":25, "name":"Deadpool", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#dc7126", "price":2000}
-        , {"idx":26, "name":"IronMan", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#dc7126", "price":2000}
-        , {"idx":27, "name":"Magician", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#dc7126", "price":2000}
-        , {"idx":28, "name":"PinkGuy", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#dc7126", "price":2000}
-        , {"idx":29, "name":"Princess", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#dc7126", "price":2000}
-        , {"idx":30, "name":"Robin", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#dc7126", "price":2000}
-        // , {"idx":31, "name":"Snarglius", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#dc7126", "price":2000}
+        , {"idx":22, "name":"BadGuy", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#6df889", "price":2000}
+        , {"idx":23, "name":"CaptainAmerica", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#f44816", "price":2000}
+        , {"idx":24, "name":"Cowboy", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#fcb280", "price":2000}
+        , {"idx":25, "name":"Deadpool", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#4aa0d6", "price":2000}
+        , {"idx":26, "name":"IronMan", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#ffff3c", "price":2000}
+        , {"idx":27, "name":"Magician", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#fdb381", "price":2000}
+        , {"idx":28, "name":"PinkGuy", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#fd68d3", "price":2000}
+        , {"idx":29, "name":"Princess", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#4be9fe", "price":2000}
+        , {"idx":30, "name":"Robin", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#7fbb61", "price":2000}
+        // , {"idx":31, "name":"Snarglius", "category":"heroes", "sub_category":"heroes", "active":false, "color":"#fdb381", "price":2000}
     
-        , {"idx":31, "name":"Coala", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#dc7126", "price":2500}
-        , {"idx":32, "name":"CommandoTiger", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#dc7126", "price":2500}
-        , {"idx":33, "name":"Cow", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#dc7126", "price":2500}
-        , {"idx":34, "name":"Crock", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#dc7126", "price":2500}
-        , {"idx":35, "name":"Lama", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#dc7126", "price":2500}
-        , {"idx":36, "name":"Panda", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#dc7126", "price":2500}
-        , {"idx":37, "name":"Rabbit", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#dc7126", "price":2500}
-        , {"idx":38, "name":"Shark", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#dc7126", "price":2500}
-        , {"idx":39, "name":"Sloth", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#dc7126", "price":2500}
+        , {"idx":31, "name":"Coala", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#a085a0", "price":2500}
+        , {"idx":32, "name":"CommandoTiger", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#fa850a", "price":2500}
+        , {"idx":33, "name":"Cow", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#979797", "price":2500}
+        , {"idx":34, "name":"Crock", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#c3faa9", "price":2500}
+        , {"idx":35, "name":"Lama", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#cb9258", "price":2500}
+        , {"idx":36, "name":"Panda", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#c4bbbc", "price":2500}
+        , {"idx":37, "name":"Rabbit", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#ffa6df", "price":2500}
+        , {"idx":38, "name":"Shark", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#79fdfe", "price":2500}
+        , {"idx":39, "name":"Sloth", "category":"legendary", "sub_category":"legendary", "active":false, "color":"#ecdc91", "price":2500}
     ];
 
     public static jewel_init_x = 337;
@@ -188,11 +193,11 @@ export default class GameInfo {
 		  {url:"res/particles/GravityMode.part",type: Laya.Loader.JSON }
     ];
  
-    public static org_velocity = 0.2;
+    public static org_velocity = 0.3;
 
     public static GAME_STATE:number = 0;// 0: ready, 1:running, 2:end,
     public static modelName:string =  GameInfo.models[0].category + "_" + GameInfo.models[0].name;    
-    public static jewelCnt:number = 2000;
+    
     public static eatJewelCnt:number = 0;
     public static coinCnt:number = 0;
     public static targetFood:number = 0;
@@ -265,9 +270,9 @@ export default class GameInfo {
     }
 
     public static GetTerrainInfo() {
-        GameInfo.terrainNum = GameInfo.round % 8;
+        GameInfo.terrainNum = GameInfo.round % GameInfo.round_period;
         if (GameInfo.terrainNum == 0)
-            GameInfo.terrainNum = 8;
+            GameInfo.terrainNum = GameInfo.round_period;
         GameInfo.terrainCol = ( GameInfo.isJewelsRound )?Laya.Color.YELLOW:Laya.Color.GRAY;
         var colorList = [Laya.Color.RED, Laya.Color.GREEN, Laya.Color.BLUE, Laya.Color.MAGENTA, Laya.Color.CYAN];
         GameInfo.terrainSky = colorList[GameInfo.round % 5];
@@ -332,6 +337,13 @@ export default class GameInfo {
 		return [x, y];
     }
 
+    public static getRoundJewelCnt():number {
+        let ret = 30;
+        if (GameInfo.round > 4)
+            ret = 40;
+        return ret;
+    }
+
     public static isJewelsLevel():Boolean {
         GameInfo.isJewelsRound =  (GameInfo.round % 4 == 0);
         return GameInfo.isJewelsRound;
@@ -368,8 +380,8 @@ export default class GameInfo {
     }
 
     public static getJewelGroundColor():Laya.Vector4 {
-        var temp = this.calcRGB("#ffff00");
-        temp.w = 0.3;
+        var temp = this.calcRGB("#FFFF99");
+        temp.w = 0.5;
         return temp;
     }
 
@@ -379,8 +391,6 @@ export default class GameInfo {
         //let cl = Math.floor(Math.random()*6);
         //console.log(cl);
         let ret = this.calcRGB(arr[GameInfo.round % 8]);
-
-
 
         return ret;
     }

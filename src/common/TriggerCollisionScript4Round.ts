@@ -3,7 +3,7 @@ export default class TriggerCollisionScript4Round extends Laya.Script3D {
     constructor() {
         super();
     }
-    public TriggerCollisionScript() {
+    public TriggerCollisionScript4Round() {
 
     }
     public onTriggerEnter(other: Laya.PhysicsComponent): void {
@@ -12,9 +12,6 @@ export default class TriggerCollisionScript4Round extends Laya.Script3D {
             
             this.owner.event("trigger", this.owner.name);
 
-            console.log("this.owner.name", this.owner.name);
-            // this.owner.destroy();
-            // this.owner = null;            
         }                   
     }
 

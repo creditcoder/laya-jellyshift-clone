@@ -203,11 +203,12 @@ export default class CustomizeDlg extends ui.CustomizeSceneUI {
     }
 
     public onClosed():void {
+        Sound.playCustomizeCloseSound();   
         if (this.model_name != "" && this.model_name != GameInfo.modelName) {
             GameInfo.modelName = this.model_name;
             this.event("select_player", GameInfo.modelName);
         }
-        this.event("close_dlg");        
+        this.event("close_dlg");             
     }
 
     private onUnlock(e:Laya.Event):void {
@@ -245,7 +246,7 @@ export default class CustomizeDlg extends ui.CustomizeSceneUI {
         let len = this.selected_arr.length;
         let idx = Math.floor(Math.random() * len);
         
-        Sound.playCustomizeSelectSound();
+        Sound.playCustomizeRandomSound();
 
         for (let i = 0; i < this.selected_arr.length; i ++) {
             let group_name = this.selected_arr[i].sub_category+"_group";
@@ -292,7 +293,7 @@ export default class CustomizeDlg extends ui.CustomizeSceneUI {
 
     private selectPlayer(e:Laya.Event):void {
         if(e.target.name.indexOf("_close") == -1) {       
-            
+            Sound.playCustomizeSelectSound();
             if (!(e.target.getChildByName("question") as Laya.Image).visible && !(e.target.getChildByName("selected") as Laya.Image).visible) {
                 
                 let t = e.target.parent;
@@ -343,7 +344,7 @@ export default class CustomizeDlg extends ui.CustomizeSceneUI {
         this.jelly_bright_blue_girl.on(Laya.Event.MOUSE_DOWN, this, this.selectPlayer);
         this.jelly_green_guy.on(Laya.Event.MOUSE_DOWN, this, this.selectPlayer);
         this.jelly_pink_girl.on(Laya.Event.MOUSE_DOWN, this, this.selectPlayer);
-        this.jelly_red_guy_cube.on(Laya.Event.MOUSE_DOWN, this, this.selectPlayer);
+        this.jelly_Snarglius.on(Laya.Event.MOUSE_DOWN, this, this.selectPlayer);
         this.jelly_yellow_guy.on(Laya.Event.MOUSE_DOWN, this, this.selectPlayer);    
         
         this.legendary_Coala.on(Laya.Event.MOUSE_DOWN, this, this.selectPlayer);

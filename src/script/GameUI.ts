@@ -1,5 +1,4 @@
 import { ui } from "./../ui/layaMaxUI";
-import CameraMoveScript from "./../common/CameraMoveScript";
 import TriggerCollisionScript from "./../common/TriggerCollisionScript";
 import TriggerCollisionScript4Jewel from "../common/TriggerCollisionScript4Jewel";
 import Player from "./../script/Player";
@@ -66,8 +65,11 @@ export default class GameUI extends ui.GameSceneUI {
 
 		////////customize dlg///////////////////////////////////////
 		this.customizeDlg.on("select_player", this, this.initPlayer);
-		this.customizeDlg.on("close_dlg", this, this.closeCustomDlg);
+		this.customizeDlg.on("close_dlg", this, this.closeDlg);
 		this.customizeDlg.on("update_jewel", this, this.updateJewel);		
+
+		this.worldDlg.on("close_dlg", this, this.closeDlg);
+		this.settingDlg.on("close_dlg", this, this.closeDlg);
 	}
 
 	private displaySplash(): void {
@@ -154,6 +156,8 @@ export default class GameUI extends ui.GameSceneUI {
 	private calcJewelAndGoNext():void {
 		GameInfo.jewelCnt = parseInt(this.current_jewel.text);
 		localStorage.setItem("jelly_jewel", this.current_jewel.text);
+		this.eat_jewel_cnt.text = "0";
+		this.jewel_round_current.text = "0";
 		this.enterRound();
 	}
 
@@ -222,6 +226,7 @@ export default class GameUI extends ui.GameSceneUI {
 		Laya.stage.setChildIndex(this.curScene, 0);
 
 		this.curCamera = this.curScene.getChildByName("Main Camera") as Laya.Camera;
+		this.curCamera.farPlane = 500;
 		this.curCamera.transform.position = new Laya.Vector3(this.curCamera.transform.position.x, this.curCamera.transform.position.y, this.curCamera.transform.position.z - 1);
 
 		GameInfo.scene = this.curScene;	
@@ -266,6 +271,7 @@ export default class GameUI extends ui.GameSceneUI {
 		let model_name_arr = GameInfo.modelName.split('_');
 		let group_name = model_name_arr[0];
 		let player_name = model_name_arr[1];
+
 		if (model_name_arr[2])
 			player_name = player_name += "_" + model_name_arr[2];
 		if (model_name_arr[3])
@@ -288,6 +294,12 @@ export default class GameUI extends ui.GameSceneUI {
 		let player_list;
 		if (!player_list)
 			player_list = Laya.loader.getRes("unity/model/player.lh") as Laya.Sprite3D;
+
+			///
+		if (player_name == "Snarglius")
+			group_name = "heroes";
+			///
+
 		let player_group = player_list.getChildByName(group_name);
 		let player_body_org = player_group.getChildByName(player_name) as Laya.MeshSprite3D;
 		this.player_body = Laya.MeshSprite3D.instantiate(player_body_org) as Laya.MeshSprite3D;
@@ -357,7 +369,7 @@ export default class GameUI extends ui.GameSceneUI {
 		/////////////////////////////////////////////////////////////////////////
 
 		this.curScene.addChild(this.food_model);
-		this.food_model.transform.position = new Laya.Vector3(this.player_body.transform.position.x, this.player_body.transform.position.y, this.player_body.transform.position.z-3);
+		this.food_model.transform.position = new Laya.Vector3(this.player_body.transform.position.x, this.player_body.transform.position.y+1, this.player_body.transform.position.z-3);
 		this.food_model.on("update_path", this, this.updateFoodPath);
 		this.food_model.on("food_destroy", this, this.destroyFood);
 		this.food_pointer = this.food_model.addComponent(Food);
@@ -375,10 +387,6 @@ export default class GameUI extends ui.GameSceneUI {
 		for (let i = 0; i < shader_obs_list.numChildren - 1; i ++) {
 			let shader_obs_tmp = shader_obs_list.getChildAt(i);
 			if (shader_obs_tmp) {
-				for( var s = 0; s < shader_obs_tmp.numChildren-1; s++ )
-				{
-					(shader_obs_tmp.getChildAt(s) as Laya.MeshSprite3D).meshRenderer.castShadow = true;
-				}
 				let shader_obs = shader_obs_tmp.getChildByName("particle1") as Laya.MeshSprite3D;
 				if (shader_obs)
 					for (let j = 0; j < shader_obs.numChildren; j ++) {
@@ -466,7 +474,7 @@ export default class GameUI extends ui.GameSceneUI {
 		}	
 	}
 
-	public closeCustomDlg():void {
+	public closeDlg():void {
 		this.updateCustomState(false);
 	}
 
@@ -527,10 +535,6 @@ export default class GameUI extends ui.GameSceneUI {
 		}		
 	}
 
-	public showSettingDlg(): void {
-		this.settingDlg.show();
-	}
-
 	public updateCustomState(state):void {
 		if (this.player_pointer)
 			this.player_pointer.updateCustomState(state);
@@ -541,10 +545,19 @@ export default class GameUI extends ui.GameSceneUI {
 	public showCustomizeDlg(): void {
 		this.customizeDlg.show();		
 		this.updateCustomState(true);
+		Sound.playCustomizeOpenSound();
 	}
 
 	public showWorldDlg(): void {
 		this.worldDlg.show();		
+		this.updateCustomState(true);
+		Sound.playCustomizeOpenSound();
+	}
+
+	public showSettingDlg(): void {
+		this.settingDlg.show();
+		this.updateCustomState(true);
+		Sound.playCustomizeOpenSound();
 	}
 
 	// ###################################################################
@@ -584,7 +597,9 @@ export default class GameUI extends ui.GameSceneUI {
 		var jewel_groups = translevel.getChildByName("jewels");
 		for( var i = 0; i < jewel_groups.numChildren; i++ ) {
 			var subObj = jewel_groups.getChildAt(i); // sub obstacle
-			for( var j = 0; j < subObj.numChildren-1; j++ ) {
+			for( var j = 0; j < subObj.numChildren; j++ ) {
+				if (!subObj.getChildAt(j))
+					continue;
 				subObj.getChildAt(j).on("trigger", this, this.updateJewelBar);
 				subObj.getChildAt(j).addComponent(TriggerCollisionScript4Jewel);				
 			}					
@@ -599,7 +614,10 @@ export default class GameUI extends ui.GameSceneUI {
 	public targetSkyStep:number;
 	public StartSkyProc()
 	{
-		//var jelly = this.curScene.getChildByName("jellyBox") as Laya.MeshSprite3D;
+
+		let initial_plane_pos = (this.curScene.getChildByName("Plane") as Laya.MeshSprite3D).transform.position;
+		(this.curScene.getChildByName("Plane") as Laya.MeshSprite3D).transform.position = new Laya.Vector3(initial_plane_pos.x+10, initial_plane_pos.y-5, initial_plane_pos.z + 5);
+
 		this.skyMat = (this.curScene.getChildByName("Plane") as Laya.MeshSprite3D).meshRenderer.material as Laya.PBRStandardMaterial;
 		
 		let arr = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#00ffff", "#ff00ff"];
@@ -696,7 +714,7 @@ export default class GameUI extends ui.GameSceneUI {
 				this.player_body.getComponent(Player).ZoomOutCamera();			
 			}			
 		}
-		this.fever_bar.value = GameInfo.current_fever / (tot_cnt/3);
+		this.fever_bar.value = GameInfo.current_fever / (tot_cnt/3);		
 	}
 
 	public updateFeverDown(block_cnt):void {
@@ -730,10 +748,12 @@ export default class GameUI extends ui.GameSceneUI {
 		
 		Sound.playGemRushGemSound();
 
-		this.jewel_bar.value = GameInfo.eatJewelCnt / (30 * 5);	
-
+		this.jewel_bar.value = GameInfo.eatJewelCnt / parseInt(this.jewel_round_total.text);	
+		
 		GameInfo.eatJewelCnt += 5;
 		this.eat_jewel_cnt.text = GameInfo.eatJewelCnt.toString();
+
+		this.jewel_round_current.text = GameInfo.eatJewelCnt.toString();
 
 		this.player_pointer.ShowSpeedParticle();		
 	}
@@ -748,10 +768,10 @@ export default class GameUI extends ui.GameSceneUI {
 	}
 
 	private stopRound() {
-		this.updateUI4Stop();
-		Sound.playFallSound();		
-
-					
+		Laya.timer.once(700, this, function(){
+			this.updateUI4Stop();
+			Sound.playFallSound();		
+		});					
 	}
 
 	private updateUI4Stop():void {
@@ -872,7 +892,8 @@ export default class GameUI extends ui.GameSceneUI {
 ////////////////////////////////////////////////////////
 
 		this.jewel_bar.value = 0;
-		GameInfo.targetFoodEat = false;		
+		GameInfo.targetFoodEat = false;	
+			
 	}
 
 	private renderLevelLbl(state:boolean):void {
@@ -899,7 +920,7 @@ export default class GameUI extends ui.GameSceneUI {
 
 		this.game_logo.visible = true;
 				
-		this.btn_setting.visible = true;
+		// this.btn_setting.visible = true;
 		this.tut_img.visible = true;
 		this.tut_bar.visible = true;
 
@@ -933,9 +954,11 @@ export default class GameUI extends ui.GameSceneUI {
 			this.star3.visible = true;			
 		}
 
-		if (!GameInfo.isJewelsRound) {
+		if (GameInfo.isJewelsRound) {
+			this.jewel_round_total.text = (GameInfo.getRoundJewelCnt()*GameInfo.jewel_unit).toString();						
+		} else {
 			this.renderTargetFoodUI();
-		}
+		} 
 		this.renderLevelLbl(true);	
 		GameInfo.current_fever = 0;
 		Laya.timer.loop(150,this,this.animate4tut);

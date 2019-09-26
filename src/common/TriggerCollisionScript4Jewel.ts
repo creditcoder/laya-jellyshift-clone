@@ -3,7 +3,7 @@ export default class TriggerCollisionScript4Jewel extends Laya.Script3D {
     constructor() {
         super();
     }
-    public TriggerCollisionScript() {
+    public TriggerCollisionScript4Jewel() {
 
     }
     public onTriggerEnter(other: Laya.PhysicsComponent): void {

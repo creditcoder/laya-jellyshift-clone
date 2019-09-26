@@ -1,0 +1,1 @@
+{"type":"CheckBox","searchKey":"CheckBox,chk_sound","props":{"y":0,"x":0,"var":"chk_sound","stateNum":"2","skin":"Images/checkbox.png","scaleY":0.5,"scaleX":0.5,"name":"","preset":"laya/pages/prefab/CheckBox.prefab","presetID":1,"isPresetRoot":true},"nodeParent":10,"label":"chk_sound","isDirectory":false,"isAniNode":true,"hasChild":false,"compId":15,"child":[],"x":30}

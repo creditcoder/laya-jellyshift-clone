@@ -1,4 +1,3 @@
-import ShadowCubeScript from "./../script/ShadowCubeScript";
 import GameInfo from "./../script/gameInfo";
 
 export default class Food extends Laya.Script3D {
@@ -14,7 +13,8 @@ export default class Food extends Laya.Script3D {
 
     public  onAwake():void {
         this.model =  this.owner as Laya.Sprite3D;
-        this.curr_round = parseInt(localStorage.getItem("jelly_round"));
+
+        this.curr_round = parseInt(localStorage.getItem("jelly_round")) + 1;
         
         let planeStaticCollider : Laya.PhysicsCollider = this.model.addComponent(Laya.PhysicsCollider);
         planeStaticCollider.colliderShape = new Laya.BoxColliderShape(1,1,1);        
@@ -23,7 +23,14 @@ export default class Food extends Laya.Script3D {
         
     }
 
-    public startFollow(sprite:Laya.Scene3D, cam:Laya.Camera) : void{
+    public isCurveLevel():boolean {
+        let ret = false;
+        if (this.curr_round >3)
+            ret = ((this.curr_round+1) % 4 == 0);
+        return ret;
+    }
+
+    public startFollow(sprite:Laya.Scene3D, cam:Laya.Camera) : void {
         this.scene = sprite;
         this.camera = cam;
         
@@ -60,26 +67,38 @@ export default class Food extends Laya.Script3D {
     
         if (GameInfo.curFoodLen > 10) {
             this.velocity = 0.205;
-            if (this.y_delta != 0.5) {
+            if (this.y_delta != 0.8) {
                 this.y_delta -= 0.01;
-                if (this.y_delta < 0.5)
-                    this.y_delta = 0.5;
+                if (this.y_delta < 0.8)
+                    this.y_delta = 0.8;
             }               
         }
         else {
             this.velocity = 0.4;
         }            
 
+        if (this.isCurveLevel()) {
+            if (GameInfo.curFoodLen > 109) {
+                this.current_dir = "x";
+            }
+        }       
+
         let y_pos = this.y_delta + Math.sin(this.model.transform.localPositionZ/2)*0.2;
-        this.model.transform.localPosition = new Laya.Vector3(this.model.transform.localPositionX, y_pos, this.model.transform.localPositionZ+this.velocity);
+
+        if (this.current_dir == "z") {
+            this.model.transform.localPosition = new Laya.Vector3(this.model.transform.localPositionX, y_pos, this.model.transform.localPositionZ+this.velocity);
+        } else if (this.current_dir == "x") {
+            this.model.transform.localPosition = new Laya.Vector3(this.model.transform.localPositionX-this.velocity, y_pos, this.model.transform.localPositionZ);
+        }
 
         this.updateGameInfo();
     }
 
+    private current_dir = "z";
+
     public updateGameInfo():void {
 
-        let round = this.curr_round +1;
-        let maxlen = GameInfo.getTerrainLength(round);
+        let maxlen = GameInfo.getTerrainLength(this.curr_round);
         //update game status info
         if (GameInfo.curFoodLen > maxlen)
             GameInfo.curFoodLen = maxlen;
@@ -104,6 +123,13 @@ export default class Food extends Laya.Script3D {
             this.model.destroy();   
         }
     }   
+
+    public onTriggerEnter(other: Laya.PhysicsComponent): void {
+        if( other.owner == null ) 
+            return;
+        
+            console.log("here is food, ", other.owner.name);
+    }
 
     public ShowEatParticle(model){
         let particles = Laya.loader.getRes("unity/model/particle.lh") as Laya.Sprite3D;

@@ -67,14 +67,14 @@ export default class Player extends Laya.Script3D {
 
     public ZoomInCamera() {
         var animator1 = this.camera.getComponent(Laya.Animator) as Laya.Animator;
-        if( animator1 != null )
+        if( animator1 != null && animator1.enabled == true )
         {
             animator1.play("ZoomIn"); 
         }
     }
     public ZoomOutCamera() {
         var animator1 = this.camera.getComponent(Laya.Animator) as Laya.Animator;
-        if( animator1 != null )
+        if( animator1 != null  && animator1.enabled == true )
         {
             animator1.play("ZoomOut"); 
         }
@@ -110,16 +110,37 @@ export default class Player extends Laya.Script3D {
     }
 
     private vdelta:Laya.Vector3 = new Laya.Vector3(0,0,0);
+    private bEnableMouse:boolean = true;
 
-    public mouseMoveProc():void {
-        if(GameInfo.GAME_STATE >= 2|| this.bCustomize == true)    
-        return;
-        if( this.is_start == false ) {                      
+    public bDownState = false;
+    public mouseDownProc(e):void {
+        this.bDownState = true;
+    }
+    public mouseUpProc(e):void {
+        this.bDownState = false;
+    }
 
-            //this.InitPlayerChilds();
+    public mouseMoveProc(e):void {
 
+
+        if(GameInfo.GAME_STATE >= 2 || this.bCustomize == true || !this.bDownState)    
+            return;
+
+            if( this.bEnableMouse == false )    return;
+
+            if( this.is_start == false ) {                      
+            
             this.owner.event("game_started");
 
+            this.player.addChild(this.cube);
+            this.player.addChild(this.cubeDownside);
+            var sky = this.scene.getChildByName("Plane") as Laya.MeshSprite3D;
+            var skypos:Laya.Vector3 = new Laya.Vector3(sky.transform.position.x, sky.transform.position.y, sky.transform.position.z);
+            var skyRot:Laya.Vector3 = new Laya.Vector3(sky.transform.localRotationEuler.x, sky.transform.localRotationEuler.y, sky.transform.localRotationEuler.z);
+            this.camera.addChild(sky);            
+            sky.transform.position = skypos;
+            sky.transform.rotationEuler = skyRot;
+            
             this.obstaclesCount = GameInfo.GetObstacleCount();
             var subModel1 = this.player.getChildAt(1);
             var animator1 = subModel1.getComponent(Laya.Animator) as Laya.Animator;
@@ -141,28 +162,27 @@ export default class Player extends Laya.Script3D {
         let delta_y:number = Laya.stage.mouseY - this.current_mouseY;
 
         if (delta_y < 0)
-            offset_dir = "up";
-        
+            offset_dir = "up";        
 
         let val_a = 1.9, val_b = 2.1;
         let lim_a = 0.25, lim_b = 1.95;
 
         if (Math.abs(delta_y)>2) {
-            //console.log("offset_dir=", delta_y+"_"+offset_dir);
             let numY = this.player.transform.localScale.y;
             let numX = this.player.transform.localScale.x;
                     
             if (offset_dir == "up" ) {
                     numY += 0.1;
-                    if(numY > lim_b) numY = lim_b;
+                    if(numY > lim_b) 
+                        numY = lim_b;
             }
             if (offset_dir == "down") {
                     numY -= 0.1;
-                    if(numY < lim_a) numY = lim_a;
+                    if(numY < lim_a) 
+                        numY = lim_a;
             }
             numX = (val_b - numY) * val_a / val_b;
 
-            //console.log("before localscale changed =" +GameInfo.GAME_STATE);
             this.player.transform.localScale = new Laya.Vector3(numX, numY, this.player.transform.localScale.z);
         }
 
@@ -174,78 +194,85 @@ export default class Player extends Laya.Script3D {
     public onUpdate() :void {
         if( GameInfo.GAME_STATE == 2)  {
             return;
-        }
-
-        Laya.stage.on(Laya.Event.MOUSE_DOWN, this, ():void=>{
-            Laya.stage.on(Laya.Event.MOUSE_MOVE, this, this.mouseMoveProc);
-        }); 
-        Laya.stage.on(Laya.Event.MOUSE_UP, this, ():void=>{
-            Laya.stage.off(Laya.Event.MOUSE_MOVE, this, this.mouseMoveProc);
-        });
-        
-        if (this.current_dir == "z" || this.current_dir == "x")
-            this.InitPlayerRoatate();
-
-        if (!this.is_start) {
-            this.player.addChild(this.cube);
-            this.player.addChild(this.cubeDownside);
-            return;
         }              
 
-        // traslate player
-        if( this.bMoveState )
-        {   
+        if (this.current_dir == "z" || this.current_dir == "x") {
+             this.bEnableMouse = true;
+        }        
+        
+        
+        if( this.bEnableMouse ) {
+            // Laya.stage.on(Laya.Event.MOUSE_DOWN, this, ():void=>{
+            Laya.stage.on(Laya.Event.MOUSE_DOWN, this, this.mouseDownProc);
+            Laya.stage.on(Laya.Event.MOUSE_UP, this, this.mouseUpProc);    
+            Laya.stage.on(Laya.Event.MOUSE_MOVE, this, this.mouseMoveProc);
+
+                
+
+            // }); 
+            // Laya.stage.on(Laya.Event.MOUSE_UP, this, ():void=>{
+            //     Laya.stage.off(Laya.Event.MOUSE_MOVE, this, this.mouseMoveProc);
+            // });
+            this.InitPlayerRoatate();
+        }
+
+        if( !this.is_start)  {
+            return;
+        }
+        if( this.bMoveState ) {   
             if (this.current_dir == "z") {
                 this.vdelta.z = this.velocity;
-            } else if (this.current_dir == "r1_1") {
-                this.vdelta.z = this.velocity * Math.sin(75/180*3.14);
-                this.vdelta.x = (-1)*this.velocity * Math.cos(75/180*3.14);
-                if (this.rotate_cnt == 0) {
-                    this.player.transform.rotate(new Laya.Vector3(0, -30, 0), true, false);       
-                    this.rotate_cnt = 1;
-
-                    this.camPos = this.scene.addChild(new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(this.delta, this.delta, this.delta))) as Laya.MeshSprite3D;
-                    this.camPos.meshRenderer.enable = false;
-                    this.player.addChild(this.camPos);                    
-                    this.camPos.transform.position = this.camera.transform.position;
-                    this.camPos.transform.rotation = this.camera.transform.rotation;
-                    this.EnableCameraAnim(false);
-                }                              
-            } else if (this.current_dir == "r1_2") {
-                this.vdelta.z = this.velocity * Math.sin(45/180*3.14);
-                this.vdelta.x = (-1)*this.velocity * Math.cos(45/180*3.14);
-                if (this.rotate_cnt == 1) {
-                    this.player.transform.rotate(new Laya.Vector3(0, -30, 0), true, false);       
-                    this.rotate_cnt = 2;
-                }                
-            } else if (this.current_dir == "r1_3") {
-                this.vdelta.z = this.velocity * Math.sin(15/180*3.14);
-                this.vdelta.x = (-1)*this.velocity * Math.cos(15/180*3.14);
-                if (this.rotate_cnt == 2) {
-                    this.player.transform.rotate(new Laya.Vector3(0, -30, 0), true, false);       
-                    this.rotate_cnt = 3;
-                }
             } else if (this.current_dir == "x") {
                 this.vdelta.x = (-1)*this.velocity;          
                 this.vdelta.z = 0;    
                 this.initpos.z = 1;                                   
-            }            
-            if (this.current_dir != "z") {
-                this.camera.transform.position = this.camPos.transform.position;
-                this.camera.transform.rotation = this.camPos.transform.rotation;
-            }                
-
+            } else {
+                if (this.camPos) {
+                    this.camera.transform.position = this.camPos.transform.position;
+                    this.camera.transform.rotation = this.camPos.transform.rotation;
+                }  
+                if (this.current_dir == "r1_1") {
+                    this.bEnableMouse = false;
+                    this.vdelta.z = this.velocity * Math.sin(75/180*3.14);
+                    this.vdelta.x = (-1)*this.velocity * Math.cos(75/180*3.14);
+                    if (this.rotate_cnt == 0) {
+                        this.player.transform.rotate(new Laya.Vector3(0, -30, 0), true, false);       
+                        this.rotate_cnt = 1;
+    
+                        this.camPos = this.scene.addChild(new Laya.MeshSprite3D(Laya.PrimitiveMesh.createBox(this.delta, this.delta, this.delta))) as Laya.MeshSprite3D;
+                        this.camPos.meshRenderer.enable = false;
+                        this.player.addChild(this.camPos);                    
+                        this.camPos.transform.position = this.camera.transform.position;
+                        this.camPos.transform.rotation = this.camera.transform.rotation;
+                        this.EnableCameraAnim(false);
+                    }                              
+                } else if (this.current_dir == "r1_2") {
+                    this.bEnableMouse = false;
+                    this.vdelta.z = this.velocity * Math.sin(45/180*3.14);
+                    this.vdelta.x = (-1)*this.velocity * Math.cos(45/180*3.14);
+                    if (this.rotate_cnt == 1) {
+                        this.player.transform.rotate(new Laya.Vector3(0, -30, 0), true, false);       
+                        this.rotate_cnt = 2;
+                    }                
+                } else if (this.current_dir == "r1_3") {
+                    this.bEnableMouse = false;
+                    this.vdelta.z = this.velocity * Math.sin(15/180*3.14);
+                    this.vdelta.x = (-1)*this.velocity * Math.cos(15/180*3.14);
+                    if (this.rotate_cnt == 2) {
+                        this.player.transform.rotate(new Laya.Vector3(0, -30, 0), true, false);       
+                        this.rotate_cnt = 3;
+                    }
+                }                            
+            }
+                
             if(GameInfo.fever_ok) {
                 let p = 0.07;
                 if (this.current_dir == "z")                
-                    this.vdelta.z +=p;
-                else if (this.current_dir == "x")                
-                    this.vdelta.x -=p;
+                    this.vdelta.z +=p;                
             }                                      
             this.player_box.transform.translate(this.vdelta, true);
-        } 
-        else // if collisioned with obstacles, backward.
-        {
+        } else {// if collisioned with obstacles, backward.
+        
             Sound.playHitObstacleSound();
 
             if( this.stopTime == 0 )
@@ -266,7 +293,6 @@ export default class Player extends Laya.Script3D {
             return;
         }
 
-        // get distance to target pillar
         this.pillar = this.FindClosestPillar();
         
         if (!this.pillar)
@@ -276,14 +302,17 @@ export default class Player extends Laya.Script3D {
 
         // set flag at last obstacle
         if( this.closeObjectIndex == this.obstaclesCount-1 )  {
-            if( GameInfo.GAME_STATE == 3 && this.distance < 0.5 )
+            if( GameInfo.GAME_STATE == 3 && this.distance < 0.5 ) {
                 this.SetNextCloseIndex();
-            else
-            {   
+            } else {   
                 GameInfo.GAME_STATE = 3; // going last position
-                this.cube.active = false;
-                this.cubeDownside.active = false;
                 this.player.transform.localPosition = this.initpos;
+                if (this.cube && this.cubeDownside) {
+                    this.cube.removeSelf();
+                    this.cubeDownside.removeSelf();
+                    this.cube = null;
+                    this.cubeDownside = null;    
+                }
             }            
             return;
         }  
@@ -301,23 +330,27 @@ export default class Player extends Laya.Script3D {
         this.length = this.distance;//this.player.transform.position.x - this.pillar.transform.position.x;
         let position: Laya.Vector3 = new Laya.Vector3(0, 0, this.length + 0.2);
         if (this.distance < 1000 && this.distance > 0) {
-            this.cube.active = true;
-            this.cubeDownside.active = true;
             this.cube.transform.localPosition = position;
-			this.cubeDownside.transform.localPosition = new Laya.Vector3(0,0,0);
-            
-            if (this.current_dir == "z" || this.current_dir == "x") {
+			this.cubeDownside.transform.localPosition = new Laya.Vector3(0,0,0);         
+
+            ////////////////////////////////
+            let x_delta = Math.abs(this.player.transform.position.x - this.pillar.transform.position.x);
+            let z_delta = Math.abs(this.player.transform.position.z - this.pillar.transform.position.z);
+
+            ////////////////////////////////
+
+            if ( x_delta < 1 || this.current_dir == "x" ){
                 this.cube.transform.localScale = new Laya.Vector3(1.3, 1, 0.1);
                 this.cubeDownside.transform.localScale = new Laya.Vector3(1.3, 1, this.length);    
-            } else {
-                this.cube.transform.localScale = new Laya.Vector3(0, 0, 0);
-                this.cubeDownside.transform.localScale = new Laya.Vector3(0, 0, 0);
+                this.cube.active = true;
+                this.cubeDownside.active = true;
+            } 
+            else {
+                this.cube.active = false;
+                this.cubeDownside.active = false;
             }            
         } else {
-            if (this.cube)
-                this.cube.active = false;
-            if (this.cubeDownside)
-                this.cubeDownside.active = false;
+            GameInfo.GAME_STATE = 2;            
         }
 
         this.updateGameInfo();
@@ -488,10 +521,17 @@ export default class Player extends Laya.Script3D {
 
     }
 
+    public calc_idx = 0;
     public FindClosestPillar():Laya.MeshSprite3D {
+        // if (this.calc_idx < 1) {
+        //     this.calc_idx ++;
+        //     return;
+        // }
         var translevel = this.scene.getChildByName("Level");
         var obstacles = translevel.getChildByName("obstacles");      
         var subObj = obstacles.getChildAt(this.closeObjectIndex) as Laya.MeshSprite3D; // sub obstacl\
+
+        // this.calc_idx = 0;
 
         return subObj;
     }
@@ -605,15 +645,17 @@ export default class Player extends Laya.Script3D {
             return;
      } 
 
-     public onTriggerEnter(other: Laya.PhysicsComponent): void {
-        if( other.owner == null ) 
-            return;
+     public onTriggerStay(other: Laya.PhysicsComponent): void {
+        if( GameInfo.GAME_STATE == 4 )  return;
+        if( other.owner == null ) return;
         if( other.owner.name != "Check" )   
-            return;
-        
+            return;        
+
+        if( this.player.transform.localScaleY < 0.9 )  return;
         GameInfo.GAME_STATE = 4;
-       
         this.is_start = false;
+        var force:Laya.Vector3 = new Laya.Vector3(0, -10, 0);
+        this.rigidbody.applyForce(force);
 
         this.owner.event("game_failed");
 
@@ -633,20 +675,20 @@ class AnimatorStateScriptDemo extends Laya.AnimatorStateScript{
 	 * 动画状态开始时执行。
 	 */
 	public onStateEnter():void {
-		console.log("动画开始播放了");
+		
 	}
 		
 	/**
 	 * 动画状态更新时执行。
 	 */
 	public onStateUpdate():void {
-		console.log("动画状态更新了");
+	
 	}
 		
 	/**
 	 * 动画状态退出时执行。
 	 */
 	public onStateExit():void {
-		console.log("动画退出了");
+
 	}
 }

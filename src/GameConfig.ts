@@ -10,7 +10,7 @@ import WorldDlg from "./script/WorldDlg"
 export default class GameConfig{
     static width:number=640;
     static height:number=960;
-    static scaleMode:string="fixedauto";
+    static scaleMode:string="showall";
     static screenMode:string="none";
     static alignV:string="middle";
     static alignH:string="center";
