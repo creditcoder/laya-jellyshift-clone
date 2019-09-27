@@ -17,9 +17,10 @@ export default class Food extends Laya.Script3D {
         this.curr_round = parseInt(localStorage.getItem("jelly_round")) + 1;
         
         let planeStaticCollider : Laya.PhysicsCollider = this.model.addComponent(Laya.PhysicsCollider);
-        planeStaticCollider.colliderShape = new Laya.BoxColliderShape(1,1,1);        
+        planeStaticCollider.colliderShape = new Laya.BoxColliderShape(3,3,3);        
         planeStaticCollider.friction = 2;
         planeStaticCollider.restitution = 0.3;
+        planeStaticCollider.isTrigger = false;
         
     }
 
@@ -78,9 +79,9 @@ export default class Food extends Laya.Script3D {
         }            
 
         if (this.isCurveLevel()) {
-            if (GameInfo.curFoodLen > 109) {
-                this.current_dir = "x";
-            }
+            // if (GameInfo.curFoodLen > 109) {
+            //     this.current_dir = "x";
+            // }
         }       
 
         let y_pos = this.y_delta + Math.sin(this.model.transform.localPositionZ/2)*0.2;
@@ -118,6 +119,7 @@ export default class Food extends Laya.Script3D {
     }
 
     public onCollisionEnter(collision:Laya.Collision):void {
+        
         if (collision.other.owner.name == "jelly") {
             this.owner.event("food_destroy");
             this.model.destroy();   
@@ -125,10 +127,10 @@ export default class Food extends Laya.Script3D {
     }   
 
     public onTriggerEnter(other: Laya.PhysicsComponent): void {
-        if( other.owner == null ) 
-            return;
         
-            console.log("here is food, ", other.owner.name);
+        if( other.owner == null ) 
+            return;               
+        
     }
 
     public ShowEatParticle(model){

@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Dialog",
-    "selectedBox":124,
-    "selecteID":192,
+    "selectedBox":311,
+    "selecteID":311,
     "searchKey":"Dialog",
     "props":{"width":640,"sceneColor":"#000000","runtime":"script/CustomizeDlg.ts","isModal":true,"height":1025},
     "nodeParent":-1,
@@ -47,7 +47,7 @@
             "x":15,
             "type":"Button",
             "searchKey":"Button,close,btn_close",
-            "props":{"y":253,"x":492,"width":35,"var":"btn_close","stateNum":"1","name":"close","height":35,"drawCallOptimize":true,"cacheAs":"bitmap"},
+            "props":{"y":253,"x":492,"width":35,"var":"btn_close","stateNum":"1","skin":"Images/x.png","name":"close","height":35,"drawCallOptimize":true,"cacheAs":"bitmap"},
             "nodeParent":2,
             "label":"close",
             "isDirectory":false,
@@ -2368,20 +2368,6 @@
                                 }]
                         }]
                 }]
-        },
-        {
-            "x":15,
-            "type":"Sprite",
-            "searchKey":"Sprite",
-            "props":{"y":253,"x":492,"width":35,"texture":"Images/x.png","height":35},
-            "nodeParent":2,
-            "label":"Sprite",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "compId":312,
-            "child":[
-                ]
         }],
     "animations":[
         {

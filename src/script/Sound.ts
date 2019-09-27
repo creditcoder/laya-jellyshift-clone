@@ -1,5 +1,10 @@
 export default class Sound {
+
+    public static sound_active:boolean = true;
+
     public static play(snd_path):void {
+        if (!this.sound_active) 
+            return;
         Laya.SoundManager.playSound("sounds/" + snd_path + ".mp3", 1, null);
     }
 

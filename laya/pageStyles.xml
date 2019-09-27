@@ -7,4 +7,5 @@
    <item name="SplashScene.scene" props="" ifExport="Embedded" aName=""/>
    <item name="ProgressScene.scene" props="" ifExport="Embedded" aName=""/>
    <item name="WorldScene.scene" props="" ifExport="Embedded" aName=""/>
+   <item name="prefab/CheckBox.prefab" props="" ifExport="Split" aName=""/>
 </page>

@@ -1,1 +1,25 @@
-{"type":"CheckBox","searchKey":"CheckBox,chk_sound","props":{"y":0,"x":0,"var":"chk_sound","stateNum":"2","skin":"Images/checkbox.png","scaleY":0.5,"scaleX":0.5,"name":"","preset":"laya/pages/prefab/CheckBox.prefab","presetID":1,"isPresetRoot":true},"nodeParent":10,"label":"chk_sound","isDirectory":false,"isAniNode":true,"hasChild":false,"compId":15,"child":[],"x":30}
+{
+    "x":0,
+    "type":"CheckBox",
+    "selectedBox":15,
+    "searchKey":"CheckBox",
+    "props":{"y":0,"x":0,"width":129,"stateNum":"2","skin":"Images/checkbox.png","selected":true,"sceneColor":null,"scaleY":0.5,"scaleX":0.5,"presetID":1,"preset":"laya/pages/prefab/CheckBox.prefab","name":"","isPresetRoot":true,"height":47},
+    "nodeParent":-1,
+    "maxID":16,
+    "label":"CheckBox(CheckBox)",
+    "isDirectory":false,
+    "isAniNode":true,
+    "hasChild":false,
+    "compId":15,
+    "child":[
+        ],
+    "animations":[
+        {
+            "nodes":[
+                ],
+            "name":"ani1",
+            "id":1,
+            "frameRate":24,
+            "action":0
+        }]
+}

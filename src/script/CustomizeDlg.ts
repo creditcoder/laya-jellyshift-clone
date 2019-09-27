@@ -22,6 +22,9 @@ class Item extends Laya.Box {
         this.role.pos(this.width / 2, this.height / 2);
 
         this.addChild(this.role);
+
+        let sound_active = localStorage.getItem("jelly_sound");
+        Sound.sound_active = (sound_active == "true")?true:false;        
     }
 }
 

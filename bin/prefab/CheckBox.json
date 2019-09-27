@@ -1,1 +1,1 @@
-{"type":"CheckBox","props":{"y":0,"x":0,"var":"chk_sound","stateNum":2,"skin":"Images/checkbox.png","scaleY":0.5,"scaleX":0.5,"name":"","presetID":1,"isPresetRoot":true},"compId":15,"loadList":["Images/checkbox.png"],"loadList3D":[]}
+{"type":"CheckBox","props":{"y":0,"x":0,"width":129,"stateNum":2,"skin":"Images/checkbox.png","selected":true,"scaleY":0.5,"scaleX":0.5,"presetID":1,"name":"","isPresetRoot":true,"height":47},"compId":15,"loadList":["Images/checkbox.png"],"loadList3D":[]}

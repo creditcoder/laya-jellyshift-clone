@@ -2,11 +2,11 @@
     "x":0,
     "type":"Dialog",
     "selectedBox":10,
-    "selecteID":30,
+    "selecteID":32,
     "searchKey":"Dialog",
     "props":{"zOrder":0,"width":412,"sceneColor":"#0d0d0d","runtime":"script/SettingDlg.ts","renderType":"render","isShowEffect":true,"isPopupCenter":true,"isModal":true,"hitTestPrior":true,"height":732},
     "nodeParent":-1,
-    "maxID":31,
+    "maxID":33,
     "label":"Dialog",
     "isOpen":true,
     "isDirectory":true,
@@ -27,20 +27,6 @@
             "hasChild":true,
             "compId":10,
             "child":[
-                {
-                    "x":30,
-                    "type":"CheckBox",
-                    "searchKey":"CheckBox",
-                    "props":{"y":182,"x":203,"presetID":1,"preset":"laya/pages/prefab/CheckBox.prefab"},
-                    "nodeParent":10,
-                    "label":"CheckBox(CheckBox)",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":15,
-                    "child":[
-                        ]
-                },
                 {
                     "x":30,
                     "type":"Label",
@@ -73,7 +59,7 @@
                     "x":30,
                     "type":"Button",
                     "searchKey":"Button",
-                    "props":{"y":279,"x":43,"width":135,"stateNum":"1","skin":"Images/settings_menu_frame.png","name":"","labelSize":15,"labelFont":"Arial","label":"RESTORE\\nPURCHASES","height":60},
+                    "props":{"y":279,"x":43,"width":135,"visible":false,"stateNum":"1","skin":"Images/settings_menu_frame.png","name":"","labelSize":15,"labelFont":"Arial","label":"RESTORE\\nPURCHASES","height":60},
                     "nodeParent":10,
                     "label":"Button",
                     "isDirectory":false,
@@ -87,7 +73,7 @@
                     "x":30,
                     "type":"Button",
                     "searchKey":"Button",
-                    "props":{"y":280,"x":205,"width":135,"stateNum":"1","skin":"Images/settings_menu_frame.png","name":"","labelSize":15,"labelFont":"Arial","label":"WETHDRAW\\nCONSENT","height":60},
+                    "props":{"y":280,"x":205,"width":135,"visible":false,"stateNum":"1","skin":"Images/settings_menu_frame.png","name":"","labelSize":15,"labelFont":"Arial","label":"WETHDRAW\\nCONSENT","height":60},
                     "nodeParent":10,
                     "label":"Button",
                     "isDirectory":false,
@@ -128,23 +114,59 @@
                 {
                     "x":30,
                     "type":"CheckBox",
-                    "searchKey":"CheckBox",
-                    "props":{"y":104.5,"x":203,"presetID":1,"preset":"laya/pages/prefab/CheckBox.prefab"},
+                    "selectedBox":15,
+                    "searchKey":"CheckBox,chk_haptic,chk_haptic",
+                    "props":{"y":106,"x":216.5,"width":247,"var":"chk_haptic","stateNum":"2","selected":true,"presetID":1,"preset":"laya/pages/prefab/CheckBox.prefab","name":"chk_haptic","height":94},
                     "nodeParent":10,
-                    "label":"CheckBox(CheckBox)",
+                    "maxID":16,
+                    "label":"chk_haptic",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
-                    "compId":30,
+                    "compId":31,
                     "child":[
-                        ]
+                        ],
+                    "animations":[
+                        {
+                            "nodes":[
+                                ],
+                            "name":"ani1",
+                            "id":1,
+                            "frameRate":24,
+                            "action":0
+                        }]
+                },
+                {
+                    "x":30,
+                    "type":"CheckBox",
+                    "selectedBox":15,
+                    "searchKey":"CheckBox,chk_sound,chk_sound",
+                    "props":{"y":183,"x":217,"width":247,"var":"chk_sound","stateNum":"2","selected":true,"presetID":1,"preset":"laya/pages/prefab/CheckBox.prefab","name":"chk_sound","height":99},
+                    "nodeParent":10,
+                    "maxID":16,
+                    "label":"chk_sound",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":32,
+                    "child":[
+                        ],
+                    "animations":[
+                        {
+                            "nodes":[
+                                ],
+                            "name":"ani1",
+                            "id":1,
+                            "frameRate":24,
+                            "action":0
+                        }]
                 }]
         },
         {
             "x":15,
             "type":"Button",
             "searchKey":"Button,close,btn_back",
-            "props":{"y":451,"x":91,"width":232,"var":"btn_back","stateNum":"1","skin":"Images/target_catched_background.png","scaleY":1,"scaleX":1,"name":"close","labelSize":35,"labelFont":"Arial","labelColors":"white","height":91},
+            "props":{"y":451,"x":91,"width":232,"var":"btn_back","stateNum":"1","scaleY":1,"scaleX":1,"name":"close","labelSize":35,"labelFont":"Arial","labelColors":"white","height":91},
             "nodeParent":2,
             "label":"close",
             "isOpen":true,

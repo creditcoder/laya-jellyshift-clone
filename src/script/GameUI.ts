@@ -14,9 +14,9 @@ import TriggerCollisionScript4Round from "../common/TriggerCollisionScript4Round
 
 export default class GameUI extends ui.GameSceneUI {
 
-	public settingDlg: SettingDlg = new SettingDlg();
-	public customizeDlg: CustomizeDlg = new CustomizeDlg();
-	public worldDlg: WorldDlg = new WorldDlg();
+	public settingDlg: SettingDlg = null;
+	public customizeDlg: CustomizeDlg = null;
+	public worldDlg: WorldDlg = null;
 	public static progressView: ProgressView = null;
 
 	private character: Laya.MeshSprite3D;
@@ -62,14 +62,6 @@ export default class GameUI extends ui.GameSceneUI {
 		this.btn_world.on(Laya.Event.MOUSE_DOWN, this, this.showWorldDlg);
 		this.btn_next.on(Laya.Event.MOUSE_DOWN, this, this.nextRound);
 		this.btn_continue.on(Laya.Event.MOUSE_DOWN, this, this.restartRound);
-
-		////////customize dlg///////////////////////////////////////
-		this.customizeDlg.on("select_player", this, this.initPlayer);
-		this.customizeDlg.on("close_dlg", this, this.closeDlg);
-		this.customizeDlg.on("update_jewel", this, this.updateJewel);		
-
-		this.worldDlg.on("close_dlg", this, this.closeDlg);
-		this.settingDlg.on("close_dlg", this, this.closeDlg);
 	}
 
 	private displaySplash(): void {
@@ -79,6 +71,8 @@ export default class GameUI extends ui.GameSceneUI {
 	}
 
 	private startResourceLoading():void {
+
+		localStorage.setItem("jelly_sound", "true");
 
 		GameUI.progressView.off("splash_finish", this, this.startResourceLoading);
 		GameUI.progressView.on("load_finish", this, this.enterRound);
@@ -168,7 +162,34 @@ export default class GameUI extends ui.GameSceneUI {
 		this.enterRound();
 	}
 
+	public changeHaptic():void {
+		let haptic = localStorage.getItem("jelly_haptic");
+		this.haptic_active = (haptic == "true")?true:false;
+	}
+
+	public changeSound():void {
+		let sound = localStorage.getItem("jelly_sound");
+		Sound.sound_active = (sound == "true")?true:false;
+	}
+
+	private initDlgs():void {
+		this.settingDlg = new SettingDlg();
+		this.settingDlg.on("close_dlg", this, this.closeDlg);
+		this.settingDlg.on("haptic_changed", this, this.changeHaptic);
+		this.settingDlg.on("sound_changed", this, this.changeSound);
+
+		this.customizeDlg = new CustomizeDlg();
+		this.customizeDlg.on("select_player", this, this.initPlayer);
+		this.customizeDlg.on("close_dlg", this, this.closeDlg);
+		this.customizeDlg.on("update_jewel", this, this.updateJewel);		
+
+		this.worldDlg = new WorldDlg();
+		this.worldDlg.on("close_dlg", this, this.closeDlg);
+	}
+
 	private enterRound(): void {
+
+		this.initDlgs();
 
 		GameInfo.InitGameInfo();
 		this.initGameInfo4Food();
@@ -294,7 +315,6 @@ export default class GameUI extends ui.GameSceneUI {
 		let player_list;
 		if (!player_list)
 			player_list = Laya.loader.getRes("unity/model/player.lh") as Laya.Sprite3D;
-
 			///
 		if (player_name == "Snarglius")
 			group_name = "heroes";
@@ -678,7 +698,23 @@ export default class GameUI extends ui.GameSceneUI {
 		this.SetTargetSky(this.orgSky, 3);
 	}
 
+	public haptic_active = true;
+	public vibration(){
+		if (!this.haptic_active)
+			return;
+        try {
+            window.navigator.vibrate(100);
+        } catch(e) {
+            console.log("navigator exp...", e.toString());
+        }
+        
+        // navigator.vibrate(100);
+        // wx.vibrateLong(100);        
+        // wx.vibrateShort(100);
+    }
+
 	public updateFeverUp():void {
+		this.vibration();
 		let tot_cnt = GameInfo.GetObstacleCount();
 		if( GameInfo.fever_ok )
 		{
@@ -920,7 +956,7 @@ export default class GameUI extends ui.GameSceneUI {
 
 		this.game_logo.visible = true;
 				
-		// this.btn_setting.visible = true;
+		this.btn_setting.visible = true;
 		this.tut_img.visible = true;
 		this.tut_bar.visible = true;
 

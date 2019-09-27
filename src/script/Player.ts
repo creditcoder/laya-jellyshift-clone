@@ -502,7 +502,10 @@ export default class Player extends Laya.Script3D {
         this.player_box.name = "jellyBox";
         this.player_box.addChild(this.player);
            
-        this.InitPlayerChilds();            
+        this.InitPlayerChilds();   
+        
+        let sound_active = localStorage.getItem("jelly_sound");
+        Sound.sound_active = (sound_active == "true")?true:false;                 
     }
 
     public  onDestroy():void {
@@ -582,18 +585,6 @@ export default class Player extends Laya.Script3D {
         }
     }
 
-    public vibration(){
-        try {
-            window.navigator.vibrate(100);
-        } catch(e) {
-            console.log("navigator exp...", e.toString());
-        }
-        
-        // navigator.vibrate(100);
-        // wx.vibrateLong(100);        
-        // wx.vibrateShort(100);
-    }
-
     public SetNextCloseIndex()
     {
             this.distToPillar = 1000;
@@ -602,7 +593,6 @@ export default class Player extends Laya.Script3D {
             // set velocity by round and passed point
             //this.velocity *= (1+GameInfo.round/100.0);                   
             this.ShowSpeedParticle();
-            this.vibration();
             // last point, process 
             if( this.closeObjectIndex >= this.obstaclesCount ) 
             { // end
