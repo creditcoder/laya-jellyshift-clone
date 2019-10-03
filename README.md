@@ -1,2 +1,3 @@
-# JellyShift
-JellyShift by Laya
+#JellyShift by Laya
+
+writer:honeybee701@hotmail.com

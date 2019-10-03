@@ -204,9 +204,9 @@
 	    static hexToB(h) { return parseInt((this.cutHex(h)).substring(4, 6), 16); }
 	    static cutHex(h) { return (h.charAt(0) == "#") ? h.substring(1, 7) : h; }
 	}
-	GameInfo.round = 0;
+	GameInfo.round = 6;
 	GameInfo.jewelCnt = 2000;
-	GameInfo.baseResPath = "https://beatstreet.digitalgalaxy.cn/jelly/";
+	GameInfo.baseResPath = "http://localhost/jelly/";
 	GameInfo.round_period = 12;
 	GameInfo.jewel_unit = 5;
 	GameInfo.models = [
@@ -1797,9 +1797,9 @@
 	    static hexToB(h) { return parseInt((this.cutHex(h)).substring(4, 6), 16); }
 	    static cutHex(h) { return (h.charAt(0) == "#") ? h.substring(1, 7) : h; }
 	}
-	GameInfo$1.round = 0;
+	GameInfo$1.round = 6;
 	GameInfo$1.jewelCnt = 2000;
-	GameInfo$1.baseResPath = "https://beatstreet.digitalgalaxy.cn/jelly/";
+	GameInfo$1.baseResPath = "http://localhost/jelly/";
 	GameInfo$1.round_period = 12;
 	GameInfo$1.jewel_unit = 5;
 	GameInfo$1.models = [

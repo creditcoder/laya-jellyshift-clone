@@ -200,19 +200,10 @@ export default class Player extends Laya.Script3D {
              this.bEnableMouse = true;
         }        
         
-        
         if( this.bEnableMouse ) {
-            // Laya.stage.on(Laya.Event.MOUSE_DOWN, this, ():void=>{
             Laya.stage.on(Laya.Event.MOUSE_DOWN, this, this.mouseDownProc);
             Laya.stage.on(Laya.Event.MOUSE_UP, this, this.mouseUpProc);    
             Laya.stage.on(Laya.Event.MOUSE_MOVE, this, this.mouseMoveProc);
-
-                
-
-            // }); 
-            // Laya.stage.on(Laya.Event.MOUSE_UP, this, ():void=>{
-            //     Laya.stage.off(Laya.Event.MOUSE_MOVE, this, this.mouseMoveProc);
-            // });
             this.InitPlayerRoatate();
         }
 
