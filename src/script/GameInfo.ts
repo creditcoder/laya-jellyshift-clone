@@ -1,12 +1,12 @@
 export default class GameInfo {
 
-    public static round:number = 12;
+    public static round:number = 0;
     public static jewelCnt:number = 2000;
 
     // public static baseResPath = "https://beatstreet.digitalgalaxy.cn/jelly/";
     // public static baseResPath = "https://games.gamesafari.cn/jelly/";
     public static baseResPath:string = "http://localhost/jelly/";
-    public static round_period:number = 13;
+    public static round_period:number = 12;
     public static jewel_unit = 5;
 
     public static models = [
