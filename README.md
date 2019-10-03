@@ -1,6 +1,6 @@
-##JellyShift by Laya##
+## JellyShift by Laya ##
 
-##wechat config##
+## wechat config ##
 writer:honeybee701@hotmail.com
 
 {
