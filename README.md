@@ -1,4 +1,4 @@
-## JellyShift by Laya ##
+## Jelly Shift by Laya ##
 
 ## wechat config ##
 writer:creditcoder@hotmail.com
