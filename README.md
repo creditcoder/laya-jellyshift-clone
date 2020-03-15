@@ -1,7 +1,7 @@
 ## Jelly Shift by Laya ##
 
 ## wechat config ##
-writer:creditcoder@hotmail.com
+writer:test@test.com
 
 {
 	"description": "项目配置文件。",
