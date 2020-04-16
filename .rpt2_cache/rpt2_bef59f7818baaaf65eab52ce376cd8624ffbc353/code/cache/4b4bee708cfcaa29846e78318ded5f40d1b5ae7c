@@ -1,0 +1,8 @@
+{
+  "code": "import GameInfo from \"./../script/GameInfo\";\r\nexport default class ShadowAnimationScript extends Laya.Script3D {\r\n    constructor() {\r\n        super();\r\n        this.startAnim = false;\r\n        this.startedTime = 0;\r\n    }\r\n    ShowPasseedParticle() {\r\n        this.me = this.owner;\r\n        this.startedTime = Laya.timer.currTimer;\r\n        this.startAnim = true;\r\n        var mat1 = this.me.getChildAt(0).meshRenderer.material;\r\n        mat1.albedoColor = GameInfo.getGroundColor();\r\n        mat1.albedoColor.w = 0.5;\r\n    }\r\n    onUpdate() {\r\n        if (this.startAnim && Laya.timer.currTimer - this.startedTime < 300) {\r\n            var lscale = this.me.transform.localScale;\r\n            var delta = new Laya.Vector3(lscale.x * 1.02, lscale.x * 1.09, 1);\r\n            this.me.transform.localScale = delta;\r\n        }\r\n        else {\r\n            if (this.startAnim && Laya.timer.currTimer - this.startedTime >= 600) {\r\n                var mat1 = this.me.getChildAt(0).meshRenderer.material;\r\n                mat1.albedoColorA -= 0.05;\r\n                if (mat1.albedoColorA <= 0) {\r\n                    this.me.active = false;\r\n                    this.startAnim = false;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n",
+  "references": [
+    "F:/zzz/laya-jellyshift-clone/src/script/GameUI.ts",
+    "F:/zzz/laya-jellyshift-clone/src/script/Player.ts",
+    "F:/zzz/laya-jellyshift-clone/src/script/GameInfo.ts"
+  ]
+}

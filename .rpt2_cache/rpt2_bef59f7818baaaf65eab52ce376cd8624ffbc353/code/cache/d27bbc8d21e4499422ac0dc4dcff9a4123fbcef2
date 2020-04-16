@@ -1,0 +1,7 @@
+{
+  "code": "import { ui } from \"./../ui/layaMaxUI\";\r\nimport Sound from \"./Sound\";\r\nexport default class CustomizeDlg extends ui.WorldSceneUI {\r\n    constructor() {\r\n        super();\r\n        let sound_active = localStorage.getItem(\"jelly_sound\");\r\n        Sound.sound_active = (sound_active == \"true\") ? true : false;\r\n    }\r\n    onClosed() {\r\n        Sound.playCustomizeCloseSound();\r\n        this.event(\"close_dlg\");\r\n    }\r\n}\r\n",
+  "references": [
+    "F:/zzz/laya-jellyshift-clone/src/ui/layaMaxUI.ts",
+    "F:/zzz/laya-jellyshift-clone/src/script/Sound.ts"
+  ]
+}

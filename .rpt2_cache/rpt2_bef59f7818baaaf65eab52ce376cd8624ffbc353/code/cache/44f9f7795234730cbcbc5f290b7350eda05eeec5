@@ -1,0 +1,4 @@
+{
+  "code": "export default class TriggerCollisionScript4Jewel extends Laya.Script3D {\r\n    constructor() {\r\n        super();\r\n    }\r\n    TriggerCollisionScript4Jewel() {\r\n    }\r\n    onTriggerEnter(other) {\r\n        if (other.owner.name == \"jelly\") {\r\n            this.owner.event(\"trigger\");\r\n            this.owner.destroy();\r\n            this.owner = null;\r\n        }\r\n    }\r\n    onUpdate() {\r\n    }\r\n    onTriggerStay(other) {\r\n    }\r\n    onTriggerExit(other) {\r\n    }\r\n    onCollisionEnter(collision) {\r\n    }\r\n    onCollisionStay(collision) {\r\n    }\r\n    onCollisionExit(collision) {\r\n    }\r\n}\r\n",
+  "references": []
+}

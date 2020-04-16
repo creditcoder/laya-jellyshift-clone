@@ -1,0 +1,4 @@
+{
+  "code": "export default class TriggerCollisionScript4Round extends Laya.Script3D {\r\n    constructor() {\r\n        super();\r\n    }\r\n    TriggerCollisionScript4Round() {\r\n    }\r\n    onTriggerEnter(other) {\r\n        if (other.owner.name == \"jelly\") {\r\n            this.owner.event(\"trigger\", this.owner.name);\r\n        }\r\n    }\r\n    onUpdate() {\r\n    }\r\n    onTriggerStay(other) {\r\n    }\r\n    onTriggerExit(other) {\r\n    }\r\n    onCollisionEnter(collision) {\r\n    }\r\n    onCollisionStay(collision) {\r\n    }\r\n    onCollisionExit(collision) {\r\n    }\r\n}\r\n",
+  "references": []
+}

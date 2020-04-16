@@ -1,0 +1,8 @@
+{
+  "code": "import PlayerModel from \"./../script/Player\";\r\nimport ShadowAnimationScript from \"./ShadowAnimationScript\";\r\nexport default class ShadowCollisionScript extends Laya.Script3D {\r\n    constructor() {\r\n        super();\r\n    }\r\n    onTriggerEnter(other) {\r\n        super.onTriggerEnter(other);\r\n        if (other.owner.name == \"jelly\") {\r\n            other.owner.getComponent(PlayerModel).SetNextCloseIndex();\r\n            let pillar = other.owner.getComponent(PlayerModel).pillar;\r\n            this.shadow_pillar = pillar.getChildByName(\"particle1\");\r\n            this.shadow_pillar.active = true;\r\n            this.shadow_pillar.getComponent(ShadowAnimationScript).ShowPasseedParticle();\r\n        }\r\n    }\r\n}\r\n",
+  "references": [
+    "F:/zzz/laya-jellyshift-clone/src/script/GameUI.ts",
+    "F:/zzz/laya-jellyshift-clone/src/script/Player.ts",
+    "F:/zzz/laya-jellyshift-clone/src/script/ShadowAnimationScript.ts"
+  ]
+}

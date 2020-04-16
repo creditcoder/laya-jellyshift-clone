@@ -1,0 +1,7 @@
+{
+  "code": "import { ui } from \"./../ui/layaMaxUI\";\r\nimport Sound from \"./Sound\";\r\nexport default class SettingDlg extends ui.SettingSceneUI {\r\n    constructor() {\r\n        super();\r\n        this.chk_haptic.on(\"change\", this, this.onHapticChange);\r\n        this.chk_sound.on(\"change\", this, this.onSoundChange);\r\n    }\r\n    onOpened() {\r\n        let sound_active = localStorage.getItem(\"jelly_sound\");\r\n        let haptic_active = localStorage.getItem(\"jelly_haptic\");\r\n        Sound.sound_active = (sound_active == \"true\") ? true : false;\r\n        this.chk_sound.selected = sound_active == \"false\" ? false : true;\r\n        this.chk_haptic.selected = haptic_active == \"false\" ? false : true;\r\n    }\r\n    onHapticChange() {\r\n        let selected = this.chk_haptic.selected;\r\n        localStorage.setItem(\"jelly_haptic\", selected.toString());\r\n        this.event(\"haptic_changed\");\r\n    }\r\n    onSoundChange() {\r\n        let selected = this.chk_sound.selected;\r\n        localStorage.setItem(\"jelly_sound\", selected.toString());\r\n        this.event(\"sound_changed\");\r\n    }\r\n    onClosed() {\r\n        Sound.playCustomizeCloseSound();\r\n        this.event(\"close_dlg\");\r\n    }\r\n}\r\n",
+  "references": [
+    "F:/zzz/laya-jellyshift-clone/src/ui/layaMaxUI.ts",
+    "F:/zzz/laya-jellyshift-clone/src/script/Sound.ts"
+  ]
+}

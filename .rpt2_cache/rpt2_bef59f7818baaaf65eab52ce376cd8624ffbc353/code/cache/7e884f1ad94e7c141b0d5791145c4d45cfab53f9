@@ -1,0 +1,10 @@
+{
+  "code": "import CustomizeDlg from \"./script/CustomizeDlg\";\r\nimport GameUI from \"./script/GameUI\";\r\nimport ProgressView from \"./script/ProgressView\";\r\nimport SettingDlg from \"./script/SettingDlg\";\r\nimport WorldDlg from \"./script/WorldDlg\";\r\nexport default class GameConfig {\r\n    constructor() { }\r\n    static init() {\r\n        var reg = Laya.ClassUtils.regClass;\r\n        reg(\"script/CustomizeDlg.ts\", CustomizeDlg);\r\n        reg(\"script/GameUI.ts\", GameUI);\r\n        reg(\"script/ProgressView.ts\", ProgressView);\r\n        reg(\"script/SettingDlg.ts\", SettingDlg);\r\n        reg(\"script/WorldDlg.ts\", WorldDlg);\r\n    }\r\n}\r\nGameConfig.width = 640;\r\nGameConfig.height = 960;\r\nGameConfig.scaleMode = \"showall\";\r\nGameConfig.screenMode = \"none\";\r\nGameConfig.alignV = \"middle\";\r\nGameConfig.alignH = \"center\";\r\nGameConfig.startScene = \"GameScene.scene\";\r\nGameConfig.sceneRoot = \"\";\r\nGameConfig.debug = false;\r\nGameConfig.stat = false;\r\nGameConfig.physicsDebug = false;\r\nGameConfig.exportSceneToJson = true;\r\nGameConfig.init();\r\n",
+  "references": [
+    "F:/zzz/laya-jellyshift-clone/src/script/CustomizeDlg.ts",
+    "F:/zzz/laya-jellyshift-clone/src/script/GameUI.ts",
+    "F:/zzz/laya-jellyshift-clone/src/script/ProgressView.ts",
+    "F:/zzz/laya-jellyshift-clone/src/script/SettingDlg.ts",
+    "F:/zzz/laya-jellyshift-clone/src/script/WorldDlg.ts"
+  ]
+}
